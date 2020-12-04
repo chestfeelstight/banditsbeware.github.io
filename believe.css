@@ -1,0 +1,23 @@
+#main_list {
+	font-family: "Times New Roman";
+	color: black;
+}
+
+li ol {
+	list-style-type: lower-alpha;
+}
+
+li ol ol {
+	list-style-type: lower-roman;
+}
+
+span.BIG_whale {
+	font-size: 160%;
+	color: rgb(126, 87, 189);
+}
+
+.George_Table th, td {
+	border: 1px solid black;
+	padding: 10px;
+	margin: 0;
+}
