@@ -21,3 +21,14 @@ span.BIG_whale {
 	padding: 10px;
 	margin: 0;
 }
+
+.REDACTED {
+	color: rgb(20, 20, 20);
+	background-color: black;
+}
+
+div.over_there {
+	margin-right: 50px;
+	float: right;
+	text-align: center;
+}
