@@ -1,15 +1,15 @@
-#main_list {
+#main-list {
 	font-family: "Times New Roman";
 	color: black;
 }
 
-li ol {
-	list-style-type: lower-alpha;
+#main-list li {
+	margin-top: 5px;
 }
 
-li ol ol {
-	list-style-type: lower-roman;
-}
+li ol { list-style-type: lower-alpha; }
+
+li ol ol { list-style-type: lower-roman; }
 
 span.BIG_whale {
 	font-size: 160%;
@@ -22,13 +22,29 @@ span.BIG_whale {
 	margin: 0;
 }
 
-.REDACTED {
-	color: rgb(20, 20, 20);
-	background-color: black;
+.REDACTED { 
+	background-color: black; 
 }
 
-div.over_there {
+.over-there {
 	margin-right: 50px;
 	float: right;
 	text-align: center;
+}
+
+.message-from-beyond {
+	font-size: 120%;
+	font-family: 'Courier New', Courier, monospace;
+}
+
+div.footnote-line {
+	height:0; 
+	border:1px solid black; 
+	margin-left: 25px;
+	width: 25%;
+}
+
+p.footnote {
+	font-size: small;
+	margin-left: 40px;
 }
