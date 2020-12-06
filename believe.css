@@ -49,3 +49,10 @@ div.footnote-line {
 	font-size: smaller;
 	margin-left: 40px;
 }
+
+.in-the-midal {
+	margin-right: 40%;
+	float: right;
+	text-align: center;
+	display: inline;
+}
