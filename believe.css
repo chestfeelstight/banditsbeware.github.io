@@ -44,7 +44,8 @@ div.footnote-line {
 	width: 25%;
 }
 
-p.footnote {
-	font-size: small;
+.footnote {
+	font-family: 'Times New Roman', Times, serif;
+	font-size: smaller;
 	margin-left: 40px;
 }
