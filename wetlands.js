@@ -6,10 +6,9 @@ function randomIcon() {
 }
 
 // turn 'element' into a random list item!!! wow, new feature.
-function randomItem(element) {
+function randomItem(e) {
  var lis = document.querySelector("#main-list").getElementsByTagName("li");
  var n = Math.floor(Math.random() * lis.length);
- element.innerHTML = lis[n].innerHTML;
+ e.innerHTML = lis[n].innerHTML;
 }
-
 function resetTitle(e) { e.innerHTML = "Post-Quarantine Bucket List"; }

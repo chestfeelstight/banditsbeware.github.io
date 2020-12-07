@@ -5,6 +5,8 @@
 
 #main-list li {
 	margin-top: 5px;
+ margin-left:10px;
+ text-indent: 0.5em;
 }
 
 button#main-title {
@@ -12,8 +14,13 @@ button#main-title {
 }
 
 li ol { list-style-type: lower-alpha; }
-
 li ol ol { list-style-type: lower-roman; }
+li ol ol ol { list-style-type: decimal; }
+li ol ol ol ol { list-style-type: lower-alpha; }
+li ol ol ol ol ol { list-style-type: lower-roman; }
+li ol ol ol ol ol ol { list-style-type: decimal; }
+li ol ol ol ol ol ol ol{ list-style-type: lower-alpha; }
+/* when will it end */
 
 span.BIG_whale {
 	font-size: 160%;
@@ -62,5 +69,12 @@ div.footnote-line {
 }
 
 .center {
-	text-align: center;
+ text-align: center;
+}
+
+.img-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
 }
