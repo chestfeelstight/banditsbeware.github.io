@@ -9,10 +9,6 @@
  text-indent: 0.5em;
 }
 
-button#main-title {
- size:150%;
-}
-
 li ol { list-style-type: lower-alpha; }
 li ol ol { list-style-type: lower-roman; }
 li ol ol ol { list-style-type: decimal; }
