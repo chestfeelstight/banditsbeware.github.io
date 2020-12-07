@@ -7,6 +7,10 @@
 	margin-top: 5px;
 }
 
+button#main-title {
+ size:150%;
+}
+
 li ol { list-style-type: lower-alpha; }
 
 li ol ol { list-style-type: lower-roman; }
@@ -22,8 +26,8 @@ span.BIG_whale {
 	margin: 0;
 }
 
-.REDACTED { 
-	background-color: black; 
+.REDACTED {
+	background-color: black;
 }
 
 .over-there {
@@ -38,8 +42,8 @@ span.BIG_whale {
 }
 
 div.footnote-line {
-	height:0; 
-	border:1px solid black; 
+	height:0;
+	border:1px solid black;
 	margin-left: 25px;
 	width: 25%;
 }
