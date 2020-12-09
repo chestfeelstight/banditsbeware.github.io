@@ -18,7 +18,8 @@ li ol ol ol ol ol ol { list-style-type: decimal; }
 li ol ol ol ol ol ol ol{ list-style-type: lower-alpha; }
 /* when will it end */
 
-/*This code is copied and pasted, multiple source locations are needed for varying font type compatibility*/
+/*This code is copied and pasted, multiple source locations are needed for varying font type compatibility
+I have yet to get it to work, so try your best*/
 @font-face {
 	font-family: 'Spicy Rice';
 	font-style: normal;
