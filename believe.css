@@ -23,13 +23,13 @@ li ol ol ol ol ol ol ol { list-style-type: lower-alpha; }
 	font-family: 'Spicy Rice';
 	font-style: normal;
 	font-weight: 400;
-	src: url('banditsbeware.github.io/fonts/spicy-rice-v9-latin-regular.eot');
-	src: local(''),
-		 url('banditsbeware.github.io/fonts/spicy-rice-v9-latin-regular.eot?#iefix') format('embedded-opentype'),
-		 url('banditsbeware.github.io/fonts/spicy-rice-v9-latin-regular.woff2') format('woff2'),
-		 url('banditsbeware.github.io/fonts/spicy-rice-v9-latin-regular.woff') format('woff'),
-		 url('banditsbeware.github.io/fonts/spicy-rice-v9-latin-regular.ttf') format('truetype'),
-		 url('banditsbeware.github.io/fonts/spicy-rice-v9-latin-regular.svg#SpicyRice') format('svg');
+	src: url('./fonts/spicy-rice-v9-latin-regular.eot');
+	src:
+		 url('./fonts/spicy-rice-v9-latin-regular.eot?#iefix') format('embedded-opentype'),
+		 url('./fonts/spicy-rice-v9-latin-regular.woff2') format('woff2'),
+		 url('./fonts/spicy-rice-v9-latin-regular.woff') format('woff'),
+		 url('./fonts/spicy-rice-v9-latin-regular.ttf') format('truetype'),
+		 url('./fonts/spicy-rice-v9-latin-regular.svg#SpicyRice') format('svg');
   }
 
 span.BIG_whale {
