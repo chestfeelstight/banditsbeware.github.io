@@ -1,0 +1,13 @@
+/* define fonts! */
+@font-face {
+	font-family: 'Spicy Rice';
+	font-style: normal;
+	font-weight: 400;
+	src: url('./fonts/spicy-rice-v9-latin-regular.eot');
+	src:
+		 url('./fonts/spicy-rice-v9-latin-regular.eot?#iefix') format('embedded-opentype'),
+		 url('./fonts/spicy-rice-v9-latin-regular.woff2') format('woff2'),
+		 url('./fonts/spicy-rice-v9-latin-regular.woff') format('woff'),
+		 url('./fonts/spicy-rice-v9-latin-regular.ttf') format('truetype'),
+		 url('./fonts/spicy-rice-v9-latin-regular.svg#SpicyRice') format('svg');
+  }

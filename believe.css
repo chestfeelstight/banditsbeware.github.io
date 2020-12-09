@@ -18,20 +18,6 @@ li ol ol ol ol ol ol { list-style-type: decimal; }
 li ol ol ol ol ol ol ol { list-style-type: lower-alpha; }
 /* when will it end */
 
-/*This code is copied and pasted, multiple source locations are needed for varying font type compatibility*/
-@font-face {
-	font-family: 'Spicy Rice';
-	font-style: normal;
-	font-weight: 400;
-	src: url('./fonts/spicy-rice-v9-latin-regular.eot');
-	src:
-		 url('./fonts/spicy-rice-v9-latin-regular.eot?#iefix') format('embedded-opentype'),
-		 url('./fonts/spicy-rice-v9-latin-regular.woff2') format('woff2'),
-		 url('./fonts/spicy-rice-v9-latin-regular.woff') format('woff'),
-		 url('./fonts/spicy-rice-v9-latin-regular.ttf') format('truetype'),
-		 url('./fonts/spicy-rice-v9-latin-regular.svg#SpicyRice') format('svg');
-  }
-
 span.BIG_whale {
 	font-size: 160%;
 	color: rgb(126, 87, 189);
