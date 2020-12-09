@@ -10,11 +10,15 @@ function randomIcon() {
 }
 
 // turn 'element' into a random list item!!! wow, new feature.
-function randomItem(e) {
- var lis = document.querySelector("#main-list").getElementsByTagName("li");
- e.innerHTML = lis[randInt(0, lis.length)].innerHTML;
+function random() {
+ var lmt = document.getElementById("main-title");
+ if (lmt.classList.contains("random")) lmt.innerHTML = "<h1>Post-Quarantine Bucket List<h1>";
+ else {
+	 lis = document.querySelector("#main-list").getElementsByTagName("li");
+	 lmt.innerHTML = lis[randInt(0, lis.length)].innerHTML;
+ }
+	lmt.classList.toggle("random");
 }
-function resetTitle(e) { e.innerHTML = "Post-Quarantine Bucket List"; }
 
 // toggle the display of quite a large number of quotation marks for the fun double quotes game
 var quoteList = ["'","'","'",",","❟","‘","❜","⹂","‛","❛","'̶̛̗̪̗̼͍͒̉̐̒̄̀̾́̍̉̊̇̿̚’"];
