@@ -72,5 +72,16 @@ div.footnote-line {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 80%;
+  width: 50%;
+}
+
+.text-going-away {
+	background: -webkit-linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0.1));
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+div.the-unknown {
+	color: rgba(0,0,0,0.1);
 }
