@@ -15,7 +15,7 @@ li ol ol ol { list-style-type: decimal; }
 li ol ol ol ol { list-style-type: lower-alpha; }
 li ol ol ol ol ol { list-style-type: lower-roman; }
 li ol ol ol ol ol ol { list-style-type: decimal; }
-li ol ol ol ol ol ol ol{ list-style-type: lower-alpha; }
+li ol ol ol ol ol ol ol { list-style-type: lower-alpha; }
 /* when will it end */
 
 span.BIG_whale {
