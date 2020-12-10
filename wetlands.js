@@ -23,8 +23,9 @@ function random() {
  if (!lmt.classList.contains("random")) {
 
 	 lmt.classList.add("random");
-	 lis = document.querySelector("#main-list").getElementsByTagName("li");
-	 lmt.innerHTML = pick(lis).innerHTML;
+	 var lis = document.getElementById("main-list").getElementsByTagName("li");
+	 // for some reason pick() is not working here
+	 lmt.innerHTML = lis[randInt(0, lis.length)].innerHTML;
 
 	 setTimeout(function() {
 		lmt.innerHTML = "<h1>Post-Quarantine Bucket List<h1>";
