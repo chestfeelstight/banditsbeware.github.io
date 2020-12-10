@@ -1,6 +1,6 @@
 #main-list {
 	font-family: "Times New Roman";
-	font-size: 1em;
+	font-size: 0.9em;
 	color: black;
 }
 
@@ -19,21 +19,6 @@ li ol ol ol ol ol { list-style-type: lower-roman; }
 li ol ol ol ol ol ol { list-style-type: decimal; }
 li ol ol ol ol ol ol ol { list-style-type: lower-alpha; }
 /* when will it end */
-
-/*This code is copied and pasted, multiple source locations are needed for varying font type compatibility
-I have yet to get it to work, so try your best*/
-@font-face {
-	font-family: 'Spicy Rice';
-	font-style: normal;
-	font-weight: 400;
-	src: url('banditsbeware.github.io/fonts/spicy-rice-v9-latin-regular.eot');
-	src: local(''),
-		 url('banditsbeware.github.io/fonts/spicy-rice-v9-latin-regular.eot?#iefix') format('embedded-opentype'),
-		 url('banditsbeware.github.io/fonts/spicy-rice-v9-latin-regular.woff2') format('woff2'),
-		 url('banditsbeware.github.io/fonts/spicy-rice-v9-latin-regular.woff') format('woff'),
-		 url('banditsbeware.github.io/fonts/spicy-rice-v9-latin-regular.ttf') format('truetype'),
-		 url('banditsbeware.github.io/fonts/spicy-rice-v9-latin-regular.svg#SpicyRice') format('svg');
-  }
 
 span.BIG_whale {
 	font-size: 160%;
@@ -98,7 +83,9 @@ div.footnote-line {
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
-
+div.basic-box {
+	border: 1px solid black;
+}
 div.the-unknown {
 	color: rgba(0,0,0,0.1);
 }
