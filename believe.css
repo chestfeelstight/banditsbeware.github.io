@@ -5,8 +5,9 @@
 
 #main-list li {
 	margin-top: 5px;
- margin-left:10px;
- text-indent: 0.5em;
+	margin-left: 25px;
+	text-indent: -40px;
+	list-style-position: inside;
 }
 
 li ol { list-style-type: lower-alpha; }
