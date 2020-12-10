@@ -8,7 +8,7 @@ function pick(list, n=1) {
 		res.push(list[randInt(0, list.length)]);
 		n--;
 	}
-	return n === 1 ? res[0] : res; 
+	return res.length === 1 ? res[0] : res; 
 }
 
 // we must add icons to this list!   we have to
@@ -24,8 +24,7 @@ function random() {
 
 	 lmt.classList.add("random");
 	 var lis = document.getElementById("main-list").getElementsByTagName("li");
-	 // for some reason pick() is not working here
-	 lmt.innerHTML = lis[randInt(0, lis.length)].innerHTML;
+	 lmt.innerHTML = pick(lis).innerHTML;
 
 	 setTimeout(function() {
 		lmt.innerHTML = "<h1>Post-Quarantine Bucket List<h1>";
