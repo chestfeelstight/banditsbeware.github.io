@@ -1,10 +1,11 @@
 #main-list {
 	font-family: "Times New Roman";
+	font-size: 1em;
 	color: black;
 }
 
 #main-list li {
-	margin-top: 5px;
+	margin-top: 3px;
 	margin-left: 25px;
 	text-indent: -40px;
 	list-style-position: inside;
