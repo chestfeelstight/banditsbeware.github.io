@@ -50,6 +50,7 @@ div.footnote-line {
 	height:0;
 	border:1px solid black;
 	margin-left: 25px;
+	margin-top: 50px;
 	width: 25%;
 }
 
@@ -99,4 +100,7 @@ div.column{
 	width: 50%;
 	padding: 5px;
 	box-sizing: border-box;
+}
+ol.invisible-list li {
+	list-style-type: none;
 }
