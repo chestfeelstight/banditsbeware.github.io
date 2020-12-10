@@ -100,3 +100,14 @@ div.footnote-line {
 div.the-unknown {
 	color: rgba(0,0,0,0.1);
 }
+.extreme {
+	font-weight: bold;
+	font-style: italic;
+	text-decoration: underline;
+}
+div.column{
+	float: left;
+	width: 50%;
+	padding: 5px;
+	box-sizing: border-box;
+}
