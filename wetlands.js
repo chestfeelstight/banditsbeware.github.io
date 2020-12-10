@@ -9,15 +9,18 @@ function randomIcon() {
 	document.getElementById("icon").setAttribute("href", "./icons/"+iconArr[randInt(0, iconArr.length)]);
 }
 
-// turn 'element' into a random list item!!! wow, new feature.
+// turn 'element' into a random list item!!! (for  a short while) wow, new feature.
 function random() {
  var lmt = document.getElementById("main-title");
- if (lmt.classList.contains("random")) lmt.innerHTML = "<h1>Post-Quarantine Bucket List<h1>";
- else {
+ if (!lmt.classList.contains("random")) {
+	 lmt.classList.add("random");
 	 lis = document.querySelector("#main-list").getElementsByTagName("li");
 	 lmt.innerHTML = lis[randInt(0, lis.length)].innerHTML;
+	 setTimeout(function() {
+		lmt.innerHTML = "<h1>Post-Quarantine Bucket List<h1>";
+		lmt.classList.remove("random");
+	 }, randInt(500, 5000));
  }
-	lmt.classList.toggle("random");
 }
 
 // toggle the display of quite a large number of quotation marks for the fun double quotes game
