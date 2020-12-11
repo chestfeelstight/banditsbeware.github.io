@@ -54,3 +54,25 @@
 		 url('./fonts/sedgwick-ave-v6-latin-regular.ttf') format('truetype'),
 		 url('./fonts/sedgwick-ave-v6-latin-regular.svg#SedgwickAve') format('svg');
   }
+@font-face {
+	font-family: 'Sahitya';
+	font-style: normal;
+	font-weight: 400;
+	src: url('./fonts/sahitya-v5-latin-regular.eot'); 
+	src: url('./fonts/sahitya-v5-latin-regular.eot?#iefix') format('embedded-opentype'),
+		 url('./fonts/sahitya-v5-latin-regular.woff2') format('woff2'),
+		 url('./fonts/sahitya-v5-latin-regular.woff') format('woff'),
+		 url('./fonts/sahitya-v5-latin-regular.ttf') format('truetype'),
+		 url('./fonts/sahitya-v5-latin-regular.svg#Sahitya') format('svg');
+}
+@font-face {
+	font-family: 'Audiowide';
+	font-style: normal;
+	font-weight: 400;
+	src: url('./fonts/audiowide-v9-latin-regular.eot');
+	src: url('./fonts/audiowide-v9-latin-regular.eot?#iefix') format('embedded-opentype'),
+		 url('./fonts/audiowide-v9-latin-regular.woff2') format('woff2'), 
+		 url('./fonts/audiowide-v9-latin-regular.woff') format('woff'),
+		 url('./fonts/audiowide-v9-latin-regular.ttf') format('truetype'),
+		 url('./fonts/audiowide-v9-latin-regular.svg#Audiowide') format('svg');
+  }

@@ -16,8 +16,8 @@ function pick(list, n=1) {
 // roll the dice
 function chance(t) { return Math.random() < t; }
 
-// we must add icons to this list!   we have to
-var iconArr = ["big_wood.png", "carl_T.png", "conical_frustum.png", "atop.png", "facebook.png", "fear.png", "random_walk.png", "x.png"];
+// we must add icons to this list!   we have to                    jeff is an icon
+var iconArr = ["big_wood.png", "carl_T.png", "conical_frustum.png", "atop.png", "facebook.png", "fear.png", "random_walk.png", "x.png", "jeff.png"];
 function randomIcon() { document.getElementById("icon").setAttribute("href", "./icons/"+pick(iconArr)); }
 
 // turn 'element' into a random list item!!! (for  a short while) wow, new feature.
