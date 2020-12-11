@@ -1,3 +1,5 @@
+var masterList = document.getElementsByTagName("li");
+
 // get a random int in [min max)
 function randInt(min, max) { return min + Math.floor((Math.random() * (max - min))); }
 
@@ -11,11 +13,12 @@ function pick(list, n=1) {
 	return res.length === 1 ? res[0] : res; 
 }
 
+// roll the dice
+function chance(t) { return Math.random() < t; }
+
 // we must add icons to this list!   we have to
 var iconArr = ["big_wood.png", "carl_T.png", "conical_frustum.png", "atop.png", "facebook.png", "fear.png", "random_walk.png", "x.png"];
-function randomIcon() {
-	document.getElementById("icon").setAttribute("href", "./icons/"+pick(iconArr));
-}
+function randomIcon() { document.getElementById("icon").setAttribute("href", "./icons/"+pick(iconArr)); }
 
 // turn 'element' into a random list item!!! (for  a short while) wow, new feature.
 function random() {
@@ -23,8 +26,7 @@ function random() {
  if (!lmt.classList.contains("random")) {
 
 	 lmt.classList.add("random");
-	 var lis = document.getElementById("main-list").getElementsByTagName("li");
-	 lmt.innerHTML = pick(lis).innerHTML;
+	 lmt.innerHTML = pick(masterList).innerHTML;
 
 	 setTimeout(function() {
 		lmt.innerHTML = "<h1>Post-Quarantine Bucket List<h1>";
@@ -56,8 +58,14 @@ function toggleQuotes() {
 }
 
 // each time this function runs, there's a chance that the li::markers will um
-var liMarkerThreshold = 0.05;
 var types = ["lower-greek", "georgian", "hebrew", "hiragana", "katakana", "telugu", "bengali", "urdu", "kannada", "arabic-indic"];
-function pantsGoneWestern() {
-	if (Math.random() < liMarkerThreshold) document.getElementById("main-list").style.listStyleType = pick(types);
+function pantsGoneWestern() { if (chance(0.05)) document.getElementById("main-list").style.listStyleType = pick(types); }
+
+// add some of li's last letter to li
+function e_x_t_e_n_d(li) {
+	var n = randInt(1,10);
+	var ntv = setInterval(() => {
+		li.textContent += li.textContent[li.textContent.length - 1];
+		if (--n === 0) clearInterval(ntv);
+	}, randInt(10, 100));
 }
