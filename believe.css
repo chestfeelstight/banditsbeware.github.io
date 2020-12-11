@@ -104,3 +104,8 @@ div.column{
 ol.invisible-list li {
 	list-style-type: none;
 }
+span.university {
+	font-family: 'Diplomata';
+	font-size: x-large;
+	font-weight: bold;
+}
