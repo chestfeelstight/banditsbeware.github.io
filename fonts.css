@@ -76,3 +76,14 @@
 		 url('./fonts/audiowide-v9-latin-regular.ttf') format('truetype'),
 		 url('./fonts/audiowide-v9-latin-regular.svg#Audiowide') format('svg');
   }
+@font-face {
+	font-family: 'Righteous';
+	font-style: normal;
+	font-weight: 400;
+	src: url('./fonts/righteous-v9-latin-regular.eot');
+	src: url('./fonts/righteous-v9-latin-regular.eot?#iefix') format('embedded-opentype'),
+		 url('./fonts/righteous-v9-latin-regular.woff2') format('woff2'),
+		 url('./fonts/righteous-v9-latin-regular.woff') format('woff'),
+		 url('./fonts/righteous-v9-latin-regular.ttf') format('truetype'),
+		 url('./fonts/righteous-v9-latin-regular.svg#Righteous') format('svg');
+  }
