@@ -47,7 +47,7 @@ const toggleQuotes = () => {
 		let wave = "", amplitude = 3 + Math.random() * 5;
 		let ap = pick(quoteList);
 
-		for (let j=0; j < waveLen; j++) wave += "<span style=\'font-size: " + (amplitude * Math.abs(j - waveLen/2)) + "px\'>"+ap+"</span>";
+		for (let j=0; j < waveLen; j++) wave += `<span style=\'font-size: ${(amplitude * Math.abs(j - waveLen/2))}px\'>${ap}</span>`;
 		for (let i=0; i<waves; i++) lmt.innerHTML += wave;
 	}
 	// lmt.scrollIntoView();
