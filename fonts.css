@@ -3,87 +3,87 @@
 	font-family: 'Spicy Rice';
 	font-style: normal;
 	font-weight: 400;
-	src: url('./fonts/spicy-rice-v9-latin-regular.eot');
-	src: url('./fonts/spicy-rice-v9-latin-regular.eot?#iefix') format('embedded-opentype'),
-		 url('./fonts/spicy-rice-v9-latin-regular.woff2') format('woff2'),
-		 url('./fonts/spicy-rice-v9-latin-regular.woff') format('woff'),
-		 url('./fonts/spicy-rice-v9-latin-regular.ttf') format('truetype'),
-		 url('./fonts/spicy-rice-v9-latin-regular.svg#SpicyRice') format('svg');
+	src: url('./fonts/spicy-rice/spicy-rice-v9-latin-regular.eot');
+	src: url('./fonts/spicy-rice/spicy-rice-v9-latin-regular.eot?#iefix') format('embedded-opentype'),
+		 url('./fonts/spicy-rice/spicy-rice-v9-latin-regular.woff2') format('woff2'),
+		 url('./fonts/spicy-rice/spicy-rice-v9-latin-regular.woff') format('woff'),
+		 url('./fonts/spicy-rice/spicy-rice-v9-latin-regular.ttf') format('truetype'),
+		 url('./fonts/spicy-rice/spicy-rice-v9-latin-regular.svg#SpicyRice') format('svg');
   }
 @font-face {
 	font-family: 'Diplomata';
 	font-style: normal;
 	font-weight: 400;
-	src: url('./fonts/diplomata-v12-latin-regular.eot');
-	src: url('./fonts/diplomata-v12-latin-regular.eot?#iefix') format('embedded-opentype'),
-		 url('./fonts/diplomata-v12-latin-regular.woff2') format('woff2'),
-		 url('./fonts/diplomata-v12-latin-regular.woff') format('woff'),
-		 url('./fonts/diplomata-v12-latin-regular.ttf') format('truetype'),
-		 url('./fonts/diplomata-v12-latin-regular.svg#Diplomata') format('svg');
+	src: url('./fonts/diplomata/diplomata-v12-latin-regular.eot');
+	src: url('./fonts/diplomata/diplomata-v12-latin-regular.eot?#iefix') format('embedded-opentype'),
+		 url('./fonts/diplomata/diplomata-v12-latin-regular.woff2') format('woff2'),
+		 url('./fonts/diplomata/diplomata-v12-latin-regular.woff') format('woff'),
+		 url('./fonts/diplomata/diplomata-v12-latin-regular.ttf') format('truetype'),
+		 url('./fonts/diplomata/diplomata-v12-latin-regular.svg#Diplomata') format('svg');
   }
 @font-face {
 	font-family: 'Dokdo';
 	font-style: normal;
 	font-weight: 400;
-	src: url('./fonts/dokdo-v8-latin-regular.eot');
-	src: url('./fonts/dokdo-v8-latin-regular.eot?#iefix') format('embedded-opentype'),
-		 url('./fonts/dokdo-v8-latin-regular.woff2') format('woff2'),
-		 url('./fonts/dokdo-v8-latin-regular.woff') format('woff'),
-		 url('./fonts/dokdo-v8-latin-regular.ttf') format('truetype'),
-		 url('./fonts/dokdo-v8-latin-regular.svg#Dokdo') format('svg');
+	src: url('./fonts/dokdo/dokdo-v8-latin-regular.eot');
+	src: url('./fonts/dokdo/dokdo-v8-latin-regular.eot?#iefix') format('embedded-opentype'),
+		 url('./fonts/dokdo/dokdo-v8-latin-regular.woff2') format('woff2'),
+		 url('./fonts/dokdo/dokdo-v8-latin-regular.woff') format('woff'),
+		 url('./fonts/dokdo/dokdo-v8-latin-regular.ttf') format('truetype'),
+		 url('./fonts/dokdo/dokdo-v8-latin-regular.svg#Dokdo') format('svg');
   }
 @font-face {
 	font-family: 'Comfortaa';
 	font-style: normal;
 	font-weight: 700;
-	src: url('./fonts/comfortaa-v29-latin-700.eot');
-	src: url('./fonts/comfortaa-v29-latin-700.eot?#iefix') format('embedded-opentype'),
-		 url('./fonts/comfortaa-v29-latin-700.woff2') format('woff2'),
-		 url('./fonts/comfortaa-v29-latin-700.woff') format('woff'),
-		 url('./fonts/comfortaa-v29-latin-700.ttf') format('truetype'),
-		 url('./fonts/comfortaa-v29-latin-700.svg#Comfortaa') format('svg');
+	src: url('./fonts/comfortaa/comfortaa-v29-latin-700.eot');
+	src: url('./fonts/comfortaa/comfortaa-v29-latin-700.eot?#iefix') format('embedded-opentype'),
+		 url('./fonts/comfortaa/comfortaa-v29-latin-700.woff2') format('woff2'),
+		 url('./fonts/comfortaa/comfortaa-v29-latin-700.woff') format('woff'),
+		 url('./fonts/comfortaa/comfortaa-v29-latin-700.ttf') format('truetype'),
+		 url('./fonts/comfortaa/comfortaa-v29-latin-700.svg#Comfortaa') format('svg');
   }
 @font-face {
 	font-family: 'Sedgwick';
 	font-style: normal;
 	font-weight: 400;
-	src: url('./fonts/sedgwick-ave-v6-latin-regular.eot');
-	src: url('./fonts/sedgwick-ave-v6-latin-regular.eot?#iefix') format('embedded-opentype'),
-		 url('./fonts/sedgwick-ave-v6-latin-regular.woff2') format('woff2'),
-		 url('./fonts/sedgwick-ave-v6-latin-regular.woff') format('woff'),
-		 url('./fonts/sedgwick-ave-v6-latin-regular.ttf') format('truetype'),
-		 url('./fonts/sedgwick-ave-v6-latin-regular.svg#SedgwickAve') format('svg');
+	src: url('./fonts/sedgwick/sedgwick-ave-v6-latin-regular.eot');
+	src: url('./fonts/sedgwick/sedgwick-ave-v6-latin-regular.eot?#iefix') format('embedded-opentype'),
+		 url('./fonts/sedgwick/sedgwick-ave-v6-latin-regular.woff2') format('woff2'),
+		 url('./fonts/sedgwick/sedgwick-ave-v6-latin-regular.woff') format('woff'),
+		 url('./fonts/sedgwick/sedgwick-ave-v6-latin-regular.ttf') format('truetype'),
+		 url('./fonts/sedgwick/sedgwick-ave-v6-latin-regular.svg#SedgwickAve') format('svg');
   }
 @font-face {
 	font-family: 'Sahitya';
 	font-style: normal;
 	font-weight: 400;
-	src: url('./fonts/sahitya-v5-latin-regular.eot'); 
-	src: url('./fonts/sahitya-v5-latin-regular.eot?#iefix') format('embedded-opentype'),
-		 url('./fonts/sahitya-v5-latin-regular.woff2') format('woff2'),
-		 url('./fonts/sahitya-v5-latin-regular.woff') format('woff'),
-		 url('./fonts/sahitya-v5-latin-regular.ttf') format('truetype'),
-		 url('./fonts/sahitya-v5-latin-regular.svg#Sahitya') format('svg');
+	src: url('./fonts/sahitya/sahitya-v5-latin-regular.eot'); 
+	src: url('./fonts/sahitya/sahitya-v5-latin-regular.eot?#iefix') format('embedded-opentype'),
+		 url('./fonts/sahitya/sahitya-v5-latin-regular.woff2') format('woff2'),
+		 url('./fonts/sahitya/sahitya-v5-latin-regular.woff') format('woff'),
+		 url('./fonts/sahitya/sahitya-v5-latin-regular.ttf') format('truetype'),
+		 url('./fonts/sahitya/sahitya-v5-latin-regular.svg#Sahitya') format('svg');
 }
 @font-face {
 	font-family: 'Audiowide';
 	font-style: normal;
 	font-weight: 400;
-	src: url('./fonts/audiowide-v9-latin-regular.eot');
-	src: url('./fonts/audiowide-v9-latin-regular.eot?#iefix') format('embedded-opentype'),
-		 url('./fonts/audiowide-v9-latin-regular.woff2') format('woff2'), 
-		 url('./fonts/audiowide-v9-latin-regular.woff') format('woff'),
-		 url('./fonts/audiowide-v9-latin-regular.ttf') format('truetype'),
-		 url('./fonts/audiowide-v9-latin-regular.svg#Audiowide') format('svg');
+	src: url('./fonts/audiowide/audiowide-v9-latin-regular.eot');
+	src: url('./fonts/audiowide/audiowide-v9-latin-regular.eot?#iefix') format('embedded-opentype'),
+		 url('./fonts/audiowide/audiowide-v9-latin-regular.woff2') format('woff2'), 
+		 url('./fonts/audiowide/audiowide-v9-latin-regular.woff') format('woff'),
+		 url('./fonts/audiowide/audiowide-v9-latin-regular.ttf') format('truetype'),
+		 url('./fonts/audiowide/audiowide-v9-latin-regular.svg#Audiowide') format('svg');
   }
 @font-face {
 	font-family: 'Righteous';
 	font-style: normal;
 	font-weight: 400;
-	src: url('./fonts/righteous-v9-latin-regular.eot');
-	src: url('./fonts/righteous-v9-latin-regular.eot?#iefix') format('embedded-opentype'),
-		 url('./fonts/righteous-v9-latin-regular.woff2') format('woff2'),
-		 url('./fonts/righteous-v9-latin-regular.woff') format('woff'),
-		 url('./fonts/righteous-v9-latin-regular.ttf') format('truetype'),
-		 url('./fonts/righteous-v9-latin-regular.svg#Righteous') format('svg');
+	src: url('./fonts/righteous/righteous-v9-latin-regular.eot');
+	src: url('./fonts/righteous/righteous-v9-latin-regular.eot?#iefix') format('embedded-opentype'),
+		 url('./fonts/righteous/righteous-v9-latin-regular.woff2') format('woff2'),
+		 url('./fonts/righteous/righteous-v9-latin-regular.woff') format('woff'),
+		 url('./fonts/righteous/righteous-v9-latin-regular.ttf') format('truetype'),
+		 url('./fonts/righteous/righteous-v9-latin-regular.svg#Righteous') format('svg');
   }
