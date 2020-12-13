@@ -75,7 +75,8 @@ div.footnote-line {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+	width: 100%;
+	max-width: 1000px;
 }
 
 .text-going-away {
