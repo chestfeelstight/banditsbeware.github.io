@@ -86,4 +86,16 @@
 		 url('./fonts/righteous/righteous-v9-latin-regular.woff') format('woff'),
 		 url('./fonts/righteous/righteous-v9-latin-regular.ttf') format('truetype'),
 		 url('./fonts/righteous/righteous-v9-latin-regular.svg#Righteous') format('svg');
-  }
+	}
+	@font-face {
+		font-family: 'Playfair Display';
+		font-style: normal;
+		font-weight: 400;
+		src: url('./fonts/playfair-display/playfair-display-v21-latin-regular.eot'); 
+		src: local(''),
+				 url('./fonts/playfair-display/playfair-display-v21-latin-regular.eot?#iefix') format('embedded-opentype'), 
+				 url('./fonts/playfair-display/playfair-display-v21-latin-regular.woff2') format('woff2'),
+				 url('./fonts/playfair-display/playfair-display-v21-latin-regular.woff') format('woff'),
+				 url('./fonts/playfair-display/playfair-display-v21-latin-regular.ttf') format('truetype'), 
+				 url('./fonts/playfair-display/playfair-display-v21-latin-regular.svg#PlayfairDisplay') format('svg'); 
+	}
