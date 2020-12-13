@@ -66,3 +66,10 @@ const e_x_t_e_n_d = (li) => {
 		if (--n === 0) clearInterval(ntv);
 	}, randInt(10, 100));
 }
+
+// this is kind of broken and that is okay
+const μετανοώ = () => {
+	for (let i=0; i<masterList.length; i++) {
+		if (chance(0.05)) masterList[i].setAttribute("onmouseenter", "e_x_t_e_n_d(this)");
+	}
+}
