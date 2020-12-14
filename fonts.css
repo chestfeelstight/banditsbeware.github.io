@@ -99,3 +99,15 @@
 				 url('./fonts/playfair-display/playfair-display-v21-latin-regular.ttf') format('truetype'), 
 				 url('./fonts/playfair-display/playfair-display-v21-latin-regular.svg#PlayfairDisplay') format('svg'); 
 	}
+@font-face {
+  font-family: 'Text Me One';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./fonts/text-me-onetext-me-one-v8-latin-regular.eot'); 
+  src: local(''),
+       url('./fonts/text-me-one/text-me-one-v8-latin-regular.eot?#iefix') format('embedded-opentype'),
+       url('./fonts/text-me-one/text-me-one-v8-latin-regular.woff2') format('woff2'),
+       url('./fonts/text-me-one/text-me-one-v8-latin-regular.woff') format('woff'),
+       url('./fonts/text-me-one/text-me-one-v8-latin-regular.ttf') format('truetype'),
+       url('./fonts/text-me-one/text-me-one-v8-latin-regular.svg#TextMeOne') format('svg');
+}
