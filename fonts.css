@@ -111,3 +111,14 @@
        url('./fonts/text-me-one/text-me-one-v8-latin-regular.ttf') format('truetype'),
        url('./fonts/text-me-one/text-me-one-v8-latin-regular.svg#TextMeOne') format('svg');
 }
+@font-face {
+	font-family: 'Bungee Shade';
+	font-style: normal;
+	font-weight: 400;
+	src: url('./fonts/bungee-shade/bungee-shade-v6-latin-regular.eot');
+	src: url('./fonts/bungee-shade/bungee-shade-v6-latin-regular.eot?#iefix') format('embedded-opentype'), 
+		 url('./fonts/bungee-shade/bungee-shade-v6-latin-regular.woff2') format('woff2'),
+		 url('./fonts/bungee-shade/bungee-shade-v6-latin-regular.woff') format('woff'),
+		 url('./fonts/bungee-shade/bungee-shade-v6-latin-regular.ttf') format('truetype'),
+		 url('./fonts/bungee-shade/bungee-shade-v6-latin-regular.svg#BungeeShade') format('svg');
+  }
