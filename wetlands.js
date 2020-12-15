@@ -60,11 +60,21 @@ const pantsGoneWestern = () => { if (chance(0.05)) document.getElementById("main
 
 // add some of li's last letter to li
 const e_x_t_e_n_d = (li) => {
-	let n = randInt(1,10);
-	let ntv = setInterval(() => {
-		li.textContent += li.textContent[li.textContent.length - 1];
-		if (--n === 0) clearInterval(ntv);
-	}, randInt(10, 100));
+ console.log(`extend(${li.textContent})`);
+	let n = randInt(10,20);
+ if (li.getElementsByTagName("li").length) {
+  let ntv = setInterval(() => {
+   let strEnd = li.innerHTML.indexOf("<ol>");
+   let ch = li.innerHTML[strEnd-1];
+   li.innerHTML = li.innerHTML.slice(0,strEnd) + ch + li.innerHTML.slice(strEnd);
+   if (--n === 0) clearInterval(ntv);
+  }, randInt(50, 100));
+ } else {
+  let ntv = setInterval(() => {
+ 		li.textContent += li.textContent[li.textContent.length - 1];
+ 		if (--n === 0) clearInterval(ntv);
+ 	}, randInt(50, 100));
+ }
 }
 
 // this is kind of broken and that is okay
@@ -73,3 +83,7 @@ const μετανοώ = () => {
 		if (chance(0.05)) masterList[i].setAttribute("onmouseenter", "e_x_t_e_n_d(this)");
 	}
 }
+
+const budge = (li) => { }
+
+masterList[3].setAttribute("onmouseenter", "e_x_t_e_n_d(this)");
