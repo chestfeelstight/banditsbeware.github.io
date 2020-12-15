@@ -21,13 +21,17 @@ const iconArr = ["big_wood.png", "carl_T.png", "conical_frustum.png", "atop.png"
 const randomIcon = () => document.getElementById("icon").setAttribute("href", "./icons/"+pick(iconArr));
 
 // turn 'lmt' into a random list item!!! (for  a short while) wow, new feature.
+// click to go there!
 const random = (lmt) => {
  if (!lmt.classList.contains("random")) {
 	 lmt.classList.add("random");
-	 lmt.innerHTML = pick(masterList).innerHTML;
+	 rand = pick(masterList);
+	 lmt.innerHTML = rand.outerHTML;
+	 lmt.setAttribute("onclick", "rand.scrollIntoView()");
 	 setTimeout(function() {
  		lmt.innerHTML = "<h1>Post-Quarantine Bucket List<h1>";
- 		lmt.classList.remove("random");
+		 lmt.classList.remove("random");
+		 lmt.setAttribute("onclick", null);
   }, randInt(1000, 5000));
  }
 }
@@ -60,23 +64,24 @@ const pantsGoneWestern = () => { if (chance(0.05)) document.getElementById("main
 
 // add some of li's last letter to li
 const e_x_t_e_n_d = (li) => {
-	let n = randInt(10, 20);
-	let ntv = setInterval(() => {
-		li.textContent += li.textContent[li.textContent.length - 1];
-		if (--n === 0) clearInterval(ntv);
-	}, randInt(50, 100));
+	if (li.innerHTML.indexOf("<ol>") < 0) {
+		let n = randInt(10, 20);
+		let ntv = setInterval(() => {
+			li.textContent += li.textContent[li.textContent.length - 1];
+			if (--n === 0) clearInterval(ntv);
+		}, randInt(50, 100));
+	}
 }
 
 // this is kind of broken and that is okay
 const μετανοώ = () => {
-	for (let i=0; i<masterList.length; i++) {
-		if (chance(0.05)) masterList[i].setAttribute("onmouseenter", "e_x_t_e_n_d(this)");
-	}
+	for (let i=0; i<masterList.length; i++)
+		if (chance(0.025)) masterList[i].setAttribute("onmouseenter", "e_x_t_e_n_d(this)");
 }
 
 const budge = (li) => {
 	let time = 80;
-	let n = 10;
+	let n = randInt(1,50);
 	let ntv = setInterval(() => {
 		let margin = li.style["margin-left"];
 		li.style["margin-left"] = "50px";
@@ -90,4 +95,4 @@ const budge = (li) => {
 setInterval(() => {
 	let n = randInt(0,masterList.length);
 	budge(masterList[n]);
-}, 500);
+}, 2000);
