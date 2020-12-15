@@ -1,7 +1,7 @@
 const masterList = document.getElementsByTagName("li");
 
 // get a random int in [min max)
-const randInt = (min, max) => min + Math.floor((Math.random() * (max - min)));
+const randInt = (min=0, max) => min + Math.floor((Math.random() * (max - min)));
 
 // get n random items from list
 const pick = (list, n=1) => {
@@ -74,4 +74,20 @@ const μετανοώ = () => {
 	}
 }
 
-const budge = (li) => { }
+const budge = (li) => {
+	let time = 80;
+	let n = 10;
+	let ntv = setInterval(() => {
+		let margin = li.style["margin-left"];
+		li.style["margin-left"] = "50px";
+		setTimeout(() => {
+			li.style["margin-left"] = margin;
+		}, time/2);
+		if (--n === 0) clearInterval(ntv);
+	}	, time);
+}
+
+setInterval(() => {
+	let n = randInt(0,masterList.length);
+	budge(masterList[n]);
+}, 500);
