@@ -29,6 +29,8 @@ span.BIG_whale {
 	color: rgb(126, 87, 189);
 }
 
+table { border-collapse: collapse; }
+
 .George_Table th, td {
 	border: 1px solid black;
 	padding: 10px;
