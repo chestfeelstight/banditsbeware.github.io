@@ -54,7 +54,6 @@ const toggleQuotes = () => {
 		for (let j=0; j < waveLen; j++) wave += `<span style=\'font-size: ${(amplitude * Math.abs(j - waveLen/2))}px\'>${ap}</span>`;
 		for (let i=0; i<waves; i++) lmt.innerHTML += wave;
 	}
-	// lmt.scrollIntoView();
 	lmt.classList.toggle("filled");
 }
 
@@ -84,7 +83,7 @@ const budge = (li) => {
 	let n = randInt(1,50);
 	let ntv = setInterval(() => {
 		let margin = li.style["margin-left"];
-		li.style["margin-left"] = "50px";
+		li.style["margin-left"] = randInt(20,60)+"px";
 		setTimeout(() => {
 			li.style["margin-left"] = margin;
 		}, time/2);
