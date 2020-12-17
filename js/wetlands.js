@@ -21,16 +21,18 @@ const chance = (t) => Math.random() < t;
 
 // we must add icons to this list!   we have to                    jeff is an icon
 const iconArr = ["big_wood.png", "carl_T.png", "conical_frustum.png", "atop.png", "facebook.png", "fear.png", "random_walk.png", "x.png", "jeff.png"];
-const randomIcon = () => $("#icon").attr("href", "../icons/"+pick(iconArr));
+const randomIcon = () => $("#icon").attr("href", "./icons/"+pick(iconArr));
 
-// title is turned random on hover. click to go there
+// title is turned random on hover. click to go there - the animations are the only way i could get the enter and leave functions to behave correctly w.r.t. changing height of random element
 let title = $("#main-title");
 title.hover(() => {
 	let rand = pick(bigList);
+	title.animate({height: "+=10px"},0);
 	title.html(rand.innerHTML);
 	title.click(() => rand.scrollIntoView());
 }, () => {
 	title.html("<h1>Post-Quarantine Bucket List</h1>");
+	title.animate({height: "-=10px"},0);
 	title.click(null);
 });
 
@@ -72,8 +74,8 @@ const e_x_t_e_n_d = (li) => {
 
 // this is kind of broken and that is okay
 const μετανοώ = () => {
-	for (let i=0; i<$("li").length; i++)
-		if (chance(0.025)) $("li")[i].attr("onmouseenter", "e_x_t_e_n_d(this)");
+	for (let i=0; i<bigList.length; i++)
+		if (chance(0.025)) bigList.get(i).setAttribute("onmouseenter", "e_x_t_e_n_d(this)");
 }
 
 const budge = (li) => {

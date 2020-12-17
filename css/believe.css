@@ -1,11 +1,25 @@
 html {
 	scroll-behavior: smooth;
-}
-
-#main-list {
 	font-family: "Times New Roman";
 	font-size: 0.8em;
 	color: black;
+}
+
+body {
+	margin: 0;
+}
+
+#main-title {
+	position: absolute;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	overflow: visible;
+}
+
+#main-list {
+	padding-top: 100px;
 }
 
 #main-list li {
