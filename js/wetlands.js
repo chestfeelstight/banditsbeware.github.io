@@ -1,4 +1,4 @@
-const masterList = document.getElementsByTagName("li");
+let masterList = $("li");
 
 // get a random int in [min max)
 const randInt = (min=0, max) => min + Math.floor((Math.random() * (max - min)));
