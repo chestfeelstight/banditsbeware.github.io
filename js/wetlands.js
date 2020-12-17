@@ -1,40 +1,38 @@
-let masterList = $("li");
+let bigList = $("li");
 
 // get a random int in [min max)
-const randInt = (min=0, max) => min + Math.floor((Math.random() * (max - min)));
+const randInt = (min, max) => min + Math.floor((Math.random() * (max - min)));
 
 // get n random items from list
-const pick = (list, n=1) => {
+const sample = (list, n) => {
 	let res = [];
 	while (n > 0) {
 		res.push(list[randInt(0, list.length)]);
 		n--;
 	}
-	return res.length === 1 ? res[0] : res;
+	return res;
 }
+
+// get 1 random item from list
+const pick = (list) => list[randInt(0, list.length)];
 
 // roll the dice
 const chance = (t) => Math.random() < t;
 
 // we must add icons to this list!   we have to                    jeff is an icon
 const iconArr = ["big_wood.png", "carl_T.png", "conical_frustum.png", "atop.png", "facebook.png", "fear.png", "random_walk.png", "x.png", "jeff.png"];
-const randomIcon = () => document.getElementById("icon").setAttribute("href", "./icons/"+pick(iconArr));
+const randomIcon = () => $("#icon").attr("href", "../icons/"+pick(iconArr));
 
-// turn 'lmt' into a random list item!!! (for  a short while) wow, new feature.
-// click to go there!
-const random = (lmt) => {
- if (!lmt.classList.contains("random")) {
-	 lmt.classList.add("random");
-	 rand = pick(masterList);
-	 lmt.innerHTML = rand.outerHTML;
-	 lmt.setAttribute("onclick", "rand.scrollIntoView()");
-	 setTimeout(function() {
- 		lmt.innerHTML = "<h1>Post-Quarantine Bucket List<h1>";
-		 lmt.classList.remove("random");
-		 lmt.setAttribute("onclick", null);
-  }, randInt(1000, 5000));
- }
-}
+// title is turned random on hover. click to go there
+let title = $("#main-title");
+title.hover(() => {
+	let rand = pick(bigList);
+	title.html(rand.innerHTML);
+	title.click(() => rand.scrollIntoView());
+}, () => {
+	title.html("<h1>Post-Quarantine Bucket List</h1>");
+	title.click(null);
+});
 
 // toggle the display of quite a large number of quotation marks for the fun double quotes game
 const quoteList = ["'","'","'",",","❟","‘","❜","⹂","‛","❛","'̶̛̗̪̗̼͍͒̉̐̒̄̀̾́̍̉̊̇̿̚’"];
@@ -74,8 +72,8 @@ const e_x_t_e_n_d = (li) => {
 
 // this is kind of broken and that is okay
 const μετανοώ = () => {
-	for (let i=0; i<masterList.length; i++)
-		if (chance(0.025)) masterList[i].setAttribute("onmouseenter", "e_x_t_e_n_d(this)");
+	for (let i=0; i<$("li").length; i++)
+		if (chance(0.025)) $("li")[i].attr("onmouseenter", "e_x_t_e_n_d(this)");
 }
 
 const budge = (li) => {
@@ -92,6 +90,6 @@ const budge = (li) => {
 }
 
 setInterval(() => {
-	let n = randInt(0,masterList.length);
-	budge(masterList[n]);
+	let n = randInt(0, $("li").length);
+	budge($("li")[n]);
 }, 2000);
