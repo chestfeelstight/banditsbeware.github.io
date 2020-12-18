@@ -38,7 +38,7 @@ title.hover(() => {
 
 // toggle the display of quite a large number of quotation marks for the fun double quotes game
 const quoteList = ["'","'","'",",","❟","‘","❜","⹂","‛","❛","'̶̛̗̪̗̼͍͒̉̐̒̄̀̾́̍̉̊̇̿̚’"];
-const maxWaveLen = 30, minWaveLen = 10;
+const maxWaveLen = 50, minWaveLen = 10;
 const maxWaves = 50, minWaves = 5;
 const toggleQuotes = () => {
 
@@ -59,7 +59,7 @@ const toggleQuotes = () => {
 
 // each time this function runs, there's a chance that the li::markers will um
 const types = ["lower-greek", "georgian", "hebrew", "hiragana", "katakana", "telugu", "bengali", "urdu", "kannada", "arabic-indic"];
-const pantsGoneWestern = () => { if (chance(0.05)) document.getElementById("main-list").style.listStyleType = pick(types); }
+const pantsGoneWestern = () => { if (chance(0.05)) $("#main-list").css("listStyleType",pick(types)); }
 
 // add some of li's last letter to li
 const e_x_t_e_n_d = (li) => {
@@ -92,6 +92,6 @@ const budge = (li) => {
 }
 
 setInterval(() => {
-	let n = randInt(0, $("li").length);
-	budge($("li")[n]);
+	let n = randInt(0, bigList.length);
+	budge(bigList[n]);
 }, 2000);
