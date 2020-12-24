@@ -95,3 +95,5 @@ setInterval(() => {
 	let n = randInt(0, bigList.length);
 	budge(bigList[n]);
 }, 2000);
+
+// a chance for all images to be anime girls ?

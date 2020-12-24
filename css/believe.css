@@ -5,9 +5,7 @@ html {
 	color: black;
 }
 
-body {
-	margin: 0;
-}
+body { margin: 0; }
 
 #main-title {
 	position: absolute;
@@ -18,9 +16,7 @@ body {
 	overflow: visible;
 }
 
-#main-list {
-	padding-top: 100px;
-}
+#main-list { padding-top: 100px; }
 
 #main-list li {
 	margin-top: 3px;
@@ -51,9 +47,7 @@ table { border-collapse: collapse; }
 	margin: 0;
 }
 
-.REDACTED {
-	background-color: black;
-}
+.REDACTED { background-color: black; }
 
 .over-there {
 	margin-right: 50px;
@@ -87,15 +81,13 @@ div.footnote-line {
 	display: inline;
 }
 
-.center {
- text-align: center;
-}
+.center { text-align: center; }
 
 .img-center {
   display: block;
   margin-left: auto;
   margin-right: auto;
-	width: 100%;
+	/* width: 100%; */
 	max-width: 1000px;
 }
 
@@ -105,28 +97,33 @@ div.footnote-line {
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
-div.basic-box {
-	border: 1px solid black;
-}
-div.the-unknown {
-	color: rgba(0,0,0,0.1);
-}
+
+div.basic-box { border: 1px solid black; }
+
+div.the-unknown { color: rgba(0,0,0,0.1); }
+
 .extreme {
 	font-weight: bold;
 	font-style: italic;
 	text-decoration: underline;
 }
+
 div.column{
 	float: left;
 	width: 50%;
 	padding: 5px;
 	box-sizing: border-box;
 }
-ol.invisible-list li {
-	list-style-type: none;
-}
-span.university {
+
+ol.invisible-list li { list-style-type: none; }
+
+.university {
 	font-family: 'Diplomata';
 	font-size: x-large;
 	font-weight: bold;
+}
+
+.gorlami-info p {
+	word-wrap: break-all;
+	text-indent: 50px;
 }
