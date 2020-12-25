@@ -21,7 +21,6 @@ body { margin: 0; }
 #main-list li {
 	margin-top: 3px;
 	margin-left: 25px;
-	text-indent: -40px;
 	list-style-position: inside;
 }
 

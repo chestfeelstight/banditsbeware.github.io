@@ -122,3 +122,15 @@
 		 url('../fonts/bungee-shade/bungee-shade-v6-latin-regular.ttf') format('truetype'),
 		 url('../fonts/bungee-shade/bungee-shade-v6-latin-regular.svg#BungeeShade') format('svg');
   }
+  @font-face {
+    font-family: 'Lobster';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/lobster/lobster-v23-latin-regular.eot');
+    src: local(''),
+         url('../fonts/lobster/lobster-v23-latin-regular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/lobster/lobster-v23-latin-regular.woff2') format('woff2'),
+         url('../fonts/lobster/lobster-v23-latin-regular.woff') format('woff'),
+         url('../fonts/lobster/lobster-v23-latin-regular.ttf') format('truetype'),
+         url('../fonts/lobster/lobster-v23-latin-regular.svg#Lobster') format('svg');
+  }
