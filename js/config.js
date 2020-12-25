@@ -27,8 +27,8 @@ const extMax = 20;
 const extMinSpeed = 100;
 const extMaxSpeed = 50;
 
-// μετανοώ - chance to act
-const μετανοώChance = 0.025;
+// e_x_t_e_n_d - chance to act
+const extendChance = 0.025;
 
 // budge - speed (ms) of budging
 const budgeSpeed = 80;
