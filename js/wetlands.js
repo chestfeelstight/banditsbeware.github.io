@@ -97,3 +97,9 @@ setInterval(() => {
 }, 2000);
 
 // a chance for all images to be anime girls ?
+if (chance(0.025)) {
+ girls = ["asuka.png","natsuki.gif","kaguya.jpg","shika.png","chika1.png","chika.gif","chika1.gif","kaguya.gif","asuka.gif","misato.png","mizuhara.png","mizuhara.gif","mizuhara1.png","monika.webp","monika.png","sailor.gif","omedetou.gif","usagi.png","usagi1.png","yuri.png"];
+ $("img").each(function() {
+  $(this).attr("src", "./images/animegirls/" + pick(girls));
+ });
+}
