@@ -21,7 +21,7 @@ const chance = (t) => Math.random() < t;
 
 // we must add icons to this list!   we have to                    jeff is an icon
 const iconArr = ["big_wood.png", "carl_T.png", "conical_frustum.png", "atop.png", "facebook.png", "fear.png", "random_walk.png", "x.png", "jeff.png"];
-const randomIcon = () => $("#icon").attr("href", "./icons/"+pick(iconArr));
+const randomIcon = () => $("#icon").attr("href", `./icons/${pick(iconList)}.png`);
 
 // title is turned random on hover. click to go there - the animations are the only way i could get the enter and leave functions to behave correctly w.r.t. changing height of random element
 let title = $("#main-title");
@@ -37,9 +37,6 @@ title.hover(() => {
 });
 
 // toggle the display of quite a large number of quotation marks for the fun double quotes game
-const quoteList = ["'","'","'",",","❟","‘","❜","⹂","‛","❛","'̶̛̗̪̗̼͍͒̉̐̒̄̀̾́̍̉̊̇̿̚’"];
-const maxWaveLen = 50, minWaveLen = 10;
-const maxWaves = 50, minWaves = 5;
 const toggleQuotes = () => {
 
 	let lmt = document.getElementById("fun-double-quotes-game");
@@ -58,48 +55,45 @@ const toggleQuotes = () => {
 }
 
 // each time this function runs, there's a chance that the li::markers will um
-const types = ["lower-greek", "georgian", "hebrew", "hiragana", "katakana", "telugu", "bengali", "urdu", "kannada", "arabic-indic"];
-const pantsGoneWestern = () => { if (chance(0.05)) $("#main-list").css("listStyleType",pick(types)); }
+const pantsGoneWestern = () => { if (chance(westernChance)) $("#main-list").css("listStyleType",pick(listStyleTypes)); }
 
 // add some of li's last letter to li
 const e_x_t_e_n_d = (li) => {
 	if (li.innerHTML.indexOf("<ol>") < 0) {
-		let n = randInt(10, 20);
+		let n = randInt(extMin, extMax);
 		let ntv = setInterval(() => {
 			li.textContent += li.textContent[li.textContent.length - 1];
 			if (--n === 0) clearInterval(ntv);
-		}, randInt(50, 100));
+		}, randInt(extMaxSpeed, extMinSpeed));
 	}
 }
 
 // this is kind of broken and that is okay
 const μετανοώ = () => {
 	for (let i=0; i<bigList.length; i++)
-		if (chance(0.025)) bigList.get(i).setAttribute("onmouseenter", "e_x_t_e_n_d(this)");
+		if (chance(μετανοώChance)) bigList.get(i).setAttribute("onmouseenter", "e_x_t_e_n_d(this)");
 }
 
 const budge = (li) => {
-	let time = 80;
-	let n = randInt(1,50);
+	let n = randInt(budgeMinN, budgeMaxN);
 	let ntv = setInterval(() => {
 		let margin = li.style["margin-left"];
-		li.style["margin-left"] = randInt(20,60)+"px";
+		li.style["margin-left"] = `${randInt(budgeMin,budgeMax)}px`;
 		setTimeout(() => {
 			li.style["margin-left"] = margin;
-		}, time/2);
+		}, budgeSpeed/2);
 		if (--n === 0) clearInterval(ntv);
-	}	, time);
+	}	, budgeSpeed);
 }
 
 setInterval(() => {
 	let n = randInt(0, bigList.length);
 	budge(bigList[n]);
-}, 2000);
+}, budgeInterval);
 
 // a chance for all images to be anime girls ?
-if (chance(0.025)) {
- girls = ["asuka.png","natsuki.gif","kaguya.jpg","shika.png","chika1.png","chika.gif","chika1.gif","kaguya.gif","asuka.gif","misato.png","mizuhara.png","mizuhara.gif","mizuhara1.png","monika.webp","monika.png","sailor.gif","omedetou.gif","usagi.png","usagi1.png","yuri.png"];
+if (chance(animeGirlsChance)) {
  $("img").each(function() {
-  $(this).attr("src", "./images/animegirls/" + pick(girls));
+  $(this).attr("src", "./images/animegirls/" + pick(animeGirls));
  });
 }
