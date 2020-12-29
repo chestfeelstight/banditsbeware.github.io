@@ -45,7 +45,7 @@ const budgeMax = 60;
 const budgeInterval = 2000;
 
 // list of anime girls filenames
-const animeGirls = ["asuka.gif","asuka.png","chika.gif","chika.png","chika1.gif","chika1.png","kaguya.gif","kaguya.jpg","misato.png","mizuhara.gif","mizuhara.png","mizuhara1.png","monika.png","monika.webp","natsuki.gif","omedetou.gif","sailor.gif","usagi.png","usagi1.png","yuri.png"];
+const animeGirls = ["rei.gif","rei.jpg","rei1.jpeg","rei.webp","rei.jpeg","asuka.gif","asuka1.png","asuka.png","asuka.jpg","chika.gif","chika.png","chika1.gif","chika1.png","faye.webp","faye.jpg","kaguya.gif","kaguya.jpg","misato.png","misato.jpg","misato1.jpg","mizuhara.gif","mizuhara.png","mizuhara1.png","monika.png","monika.webp","natsuki.gif","omedetou.gif","sailor.gif","usagi.png","usagi1.png","yuri.png"];
 
 // chance for all images to be anime girls
 const animeGirlsChance = 0.02;
