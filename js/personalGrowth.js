@@ -17,7 +17,10 @@ setInterval(() => {
 
 // a chance for all images to be anime girls
 if (chance(animeGirlsChance))
- $("img").each(function() { $(this).attr("src", "./images/animegirls/" + pick(animeGirls)); });
+ $("img").each(function() { 
+  $(this).attr("src", "./images/animegirls/" + pick(animeGirls)); 
+  $(this).attr("width", "300");   
+});
 
 // a chance to change all the li::markers
 if (chance(westernChance))
