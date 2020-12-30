@@ -47,3 +47,7 @@ title.hover(() => {
  title.animate({height: "-=10px"},0);
  title.click(null);
 });
+
+//Kjakman is a covert agent?
+if (chance(KjakmanDisappears))
+  innerHTML.replace("Kjãkman", "John White");
