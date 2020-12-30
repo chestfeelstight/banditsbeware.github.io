@@ -97,6 +97,12 @@ div.footnote-line {
 	-webkit-text-fill-color: transparent;
 }
 
+.text-fading-black {
+	background-image: linear-gradient(white, black);
+	margin-left: -50px;
+	margin-right: 0;
+}
+
 div.basic-box { border: 1px solid black; }
 
 div.the-unknown { color: rgba(0,0,0,0.1); }
