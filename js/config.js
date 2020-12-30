@@ -44,6 +44,16 @@ const budgeMax = 60;
 // budge - interval (ms) for selecting a random item to budge
 const budgeInterval = 2000;
 
+// flicker - speed (ms) of flicker
+const flickerSpeed = 50;
+
+// flicker - range for number of flickers
+const flickerMinN = 1;
+const flickerMaxN = 200;
+
+// flicker - interval (ms) for selecting a random item to flicker
+const flickerInterval = 300;
+
 // list of anime girls filenames
 const animeGirls = ["rei.gif","rei.jpg","rei1.jpeg","rei.webp","rei.jpeg","asuka.gif","asuka1.png","asuka.png","asuka.jpg","chika.gif","chika.png","chika1.gif","chika1.png","faye.webp","faye.jpg","kaguya.gif","kaguya.jpg","misato.png","misato.jpg","misato1.jpg","mizuhara.gif","mizuhara.jpg","mizuhara.png","mizuhara1.png","monika.png","monika.webp","natsuki.gif","omedetou.gif","sailor.gif","usagi.png","usagi1.png","yuri.png"];
 

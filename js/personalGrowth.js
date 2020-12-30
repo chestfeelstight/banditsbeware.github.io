@@ -15,11 +15,17 @@ setInterval(() => {
  budge(bigList[n]);
 }, budgeInterval);
 
+// set interval for flickering
+setInterval(() => {
+ let n = randInt(0, bigList.length);
+ flicker(bigList[n]);
+}, flickerInterval);
+
 // a chance for all images to be anime girls
 if (chance(animeGirlsChance))
- $("img").each(function() { 
-  $(this).attr("src", "./images/animegirls/" + pick(animeGirls)); 
-  $(this).attr("width", "300");   
+ $("img").each(function() {
+  $(this).attr("src", "./images/animegirls/" + pick(animeGirls));
+  $(this).attr("width", "300");
 });
 
 // a chance to change all the li::markers
