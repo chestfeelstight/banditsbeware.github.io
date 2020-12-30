@@ -4,7 +4,7 @@ little pincers in a BIG new way (yₒᵤ'ᵣₑ ₙₒₜ gₒᵢₙg ₜₒ w�
 ---
 
 *todo list*
-- [ ] complete merge from google document
+- [x] complete merge from google document
 - [ ] spontaneous item glitches
 - [ ] make images smaller
 - [ ] spontaneous color change
