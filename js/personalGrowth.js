@@ -40,7 +40,7 @@ let title = $("#main-title");
 title.hover(() => {
  let rand = pick(bigList);
  title.animate({height: "+=10px"},0);
- title.html(rand.innerHTML);
+ title.html($(rand).prop('outerHTML'));
  title.click(() => rand.scrollIntoView());
 }, () => {
  title.html("<h1>Post-Quarantine Bucket List</h1>");
