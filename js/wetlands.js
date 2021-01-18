@@ -46,18 +46,19 @@ const e_x_t_e_n_d = (li) => {
 
 const budge = (li) => {
 	let n = randInt(budgeMinN, budgeMaxN);
+	let margin = $(li).css("margin-left");
 	let ntv = setInterval(() => {
-		let margin = $(li).css("margin-left");
 		$(li).css("margin-left", `${randInt(budgeMin,budgeMax)}px`);
 		setTimeout(() => { $(li).css("margin-left", margin); }, budgeSpeed/2);
 		if (--n === 0) clearInterval(ntv);
 	}	, budgeSpeed);
+	$(li).css("margin-left", margin);
 }
 
 const flicker = (li) => {
  let n = randInt(flickerMinN, flickerMaxN);
+ let color = $(li).css("color");
  let ntv = setInterval(() => {
-  let color = $(li).css("color");
   $(li).css("color", "white");
   setTimeout(() => { $(li).css("color", color); }, randInt(flickerSpeed*0.75));
   if (--n === 0) clearInterval(ntv);

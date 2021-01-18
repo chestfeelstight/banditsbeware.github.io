@@ -24,6 +24,30 @@ body { margin: 0; }
 	list-style-position: inside;
 }
 
+#ephemeral-menu-bar {
+	border: 2px solid rebeccapurple;
+	color: white;
+	position: fixed;
+	/* margin-left: 60%;
+	margin-top: 50%; */
+	width: 300px;
+	height: 300px;
+	background-image: url('/gifs/stars.gif');
+	background-size: 90%;
+	overflow-y: scroll;
+}
+
+#ephemeral-menu-bar::-webkit-scrollbar { display: none; }
+
+#ephemeral-menu-bar li {
+	margin-bottom: 10px;
+}
+
+#ephemeral-menu-bar a {
+	text-decoration: none;
+	color: white;
+}
+
 li ol { list-style-type: lower-alpha; }
 li ol ol { list-style-type: lower-roman; }
 li ol ol ol { list-style-type: decimal; }

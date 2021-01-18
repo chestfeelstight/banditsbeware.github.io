@@ -28,7 +28,7 @@ const extMinSpeed = 100;
 const extMaxSpeed = 50;
 
 // e_x_t_e_n_d - chance to act
-const extendChance = 0.025;
+const extendChance = 0.005;
 
 // budge - speed (ms) of budging
 const budgeSpeed = 80;
@@ -45,7 +45,7 @@ const budgeMax = 60;
 const budgeInterval = 2000;
 
 // flicker - speed (ms) of flicker
-const flickerSpeed = 60;
+const flickerSpeed = 100;
 
 // flicker - range for number of flickers
 const flickerMinN = 1;

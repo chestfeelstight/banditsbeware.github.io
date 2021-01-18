@@ -47,7 +47,19 @@ title.hover(() => {
  title.animate({height: "-=10px"},0);
  title.click(null);
 });
-
+/*
 //Kjakman is a covert agent?
 if (chance(KjakmanDisappears))
   innerHTML.replace("Kjãkman", "John White");
+  */
+
+// press 'c' for table of contentss
+$("#ephemeral-menu-bar").hide();
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'c') {
+    $('#ephemeral-menu-bar').toggle();
+    $('#ephemeral-menu-bar').css('margin-left', `${randInt(0, 80)}%`);
+    $('#ephemeral-menu-bar').css('margin-top', `${randInt(0, 80)}%`);
+    $('#important-instructions-1').html('good job!');
+  }
+});
