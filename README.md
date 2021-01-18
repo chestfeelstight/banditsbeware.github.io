@@ -5,9 +5,9 @@ little pincers in a BIG new way (yₒᵤ'ᵣₑ ₙₒₜ gₒᵢₙg ₜₒ w�
 
 *todo list*
 - [x] complete merge from google document
-- [ ] spontaneous item glitches
+- [x] spontaneous item glitches
 - [ ] make images smaller
 - [ ] spontaneous color change
 - [ ] persistent/spontaneous hovering elements
-- [ ] add hashes for navigation (table of contents?)
+- [x] add hashes for navigation (table of contents?)
 - [ ] make weirdness progress progressively

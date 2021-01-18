@@ -21,6 +21,11 @@ setInterval(() => {
  flicker(bigList[n]);
 }, flickerInterval);
 
+setInterval(() => {
+  let n = randInt(0, bigList.length);
+  adios(bigList[n]);
+}, adiosFrequency);
+
 // a chance for all images to be anime girls
 if (chance(animeGirlsChance))
  $("img").each(function() {

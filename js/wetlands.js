@@ -64,3 +64,10 @@ const flicker = (li) => {
   if (--n === 0) clearInterval(ntv);
  }, flickerSpeed);
 }
+
+const adios = (li) => {
+	$(li).animate({
+		letterSpacing: '100px',
+		opacity: 0.0,
+	}, 2000, () => $(li).hide());
+}
