@@ -10,4 +10,4 @@ little pincers in a BIG new way (yₒᵤ'ᵣₑ ₙₒₜ gₒᵢₙg ₜₒ w�
 - [ ] spontaneous color change
 - [ ] persistent/spontaneous hovering elements
 - [x] add hashes for navigation (table of contents?)
-- [ ] make weirdness progress progressively
+- [x] make weirdness progress progressively

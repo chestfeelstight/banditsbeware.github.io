@@ -69,5 +69,6 @@ const adios = (li) => {
 	$(li).animate({
 		letterSpacing: '100px',
 		opacity: 0.0,
+		height: '-5px'
 	}, 2000, () => $(li).hide());
 }

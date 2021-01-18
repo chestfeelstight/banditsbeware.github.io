@@ -11,18 +11,19 @@ for (let i=0; i<bigList.length; i++)
 
 // set interval for budging
 setInterval(() => {
- let n = randInt(0, bigList.length);
+ let n = randInt(100, bigList.length);
  budge(bigList[n]);
 }, budgeInterval);
 
 // set interval for flickering
 setInterval(() => {
- let n = randInt(0, bigList.length);
+ let n = randInt(50, bigList.length);
  flicker(bigList[n]);
 }, flickerInterval);
 
+// set interval for adios
 setInterval(() => {
-  let n = randInt(0, bigList.length);
+  let n = randInt(200, bigList.length);
   adios(bigList[n]);
 }, adiosFrequency);
 
