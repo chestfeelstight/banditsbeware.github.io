@@ -60,7 +60,7 @@ if (chance(KjakmanDisappears))
   */
 
 // press 'c' for table of contentss
-$("#ephemeral-menu-bar").hide();
+// $("#ephemeral-menu-bar").hide();
 document.addEventListener('keydown', function(event) {
   if (event.key === 'c') {
     $('#ephemeral-menu-bar').toggle();
