@@ -17,6 +17,9 @@ const pick = (list) => list[randInt(0, list.length)];
 // roll the dice
 const chance = (t) => Math.random() < t;
 
+// random color string, e.g. `rgb(R, G, B)`
+const randColor = () => `rgb(${randInt(0,255)}, ${randInt(0,255)}, ${randInt(0,255)})`
+
 // toggle the display of quite a large number of quotation marks for the fun double quotes game
 const toggleQuotes = () => {
 	let lmt = document.getElementById("fun-double-quotes-game");
@@ -63,6 +66,7 @@ const flicker = (li) => {
   setTimeout(() => { $(li).css("color", color); }, randInt(flickerSpeed*0.75));
   if (--n === 0) clearInterval(ntv);
  }, flickerSpeed);
+ $(li).css("color", color);
 }
 
 const adios = (li) => {
