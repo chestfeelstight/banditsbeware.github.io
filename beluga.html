@@ -35,16 +35,13 @@
 			// make the words appear after .5s
 			setTimeout(() => $("#p1, #p2").css("display", "block"), 500);
 
-			// give each word a random color
-			$("#p1").css("color", randColor());
-			$("#p2").css("color", randColor());
-
 			// move 'silent' to a new location every ~5s
 			let p1 = setInterval(() => {
 				$("#p1").animate({
 					marginTop: `${randInt(-5,100)}%`,
 					marginLeft: `${randInt(-5,100)}%`
 				}, randInt(250, 2000));
+				$("#p1").css("color", randColor());
 			}, randInt(0, 5 * 1000));
 
 			// move 'lonely' to a new location every ~5s
@@ -53,6 +50,7 @@
 					marginTop: `${randInt(-5,100)}%`,
 					marginLeft: `${randInt(-5,100)}%`
 				}, randInt(250, 2000));
+				$("#p2").css("color", randColor());
 			}, randInt(0, 5 * 1000));
 		</script>
 	</body>
