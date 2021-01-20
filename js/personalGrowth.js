@@ -68,3 +68,18 @@ document.addEventListener('keydown', function(event) {
     $('#important-instructions-1').html('good job!');
   }
 });
+
+let adShowing = false;
+let ad = $("#bottom-banner-ad");
+setInterval(() => {
+  let coo = randColor();
+  ad.css("border", `5px solid ${coo}`);
+  if (!adShowing && chance(adChance)) {
+    ad.fadeIn();
+    adShowing = true;
+    setTimeout(() => {
+      ad.fadeOut();
+      adShowing = false;
+    }, adTimeout);
+  }
+}, 250);

@@ -63,5 +63,11 @@ const animeGirlsChance = 0.02;
 // frequency at which list items literally go away forever
 const adiosFrequency = 15 * 1000;
 
+// chance for an add to pop up every .25s
+const adChance = 0.01;
+
+// how long the banner ad stays up
+const adTimeout = 5 * 1000;
+
 // chance for Kjakman to become covert spy, using alias
 const KjakmanDisappears = 1;

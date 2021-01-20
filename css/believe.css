@@ -46,6 +46,16 @@ body { margin: 0; }
 	color: white;
 }
 
+#bottom-banner-ad {
+	position: fixed; 
+	display: none;
+	top: 50%; 
+	left: 50%; 
+	margin-left: -300px; 
+	margin-top: 50%;
+	border: 5px solid black;
+}
+
 li ol { list-style-type: lower-alpha; }
 li ol ol { list-style-type: lower-roman; }
 li ol ol ol { list-style-type: decimal; }
