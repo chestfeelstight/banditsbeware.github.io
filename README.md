@@ -12,3 +12,4 @@ little pincers in a BIG new way (yₒᵤ'ᵣₑ ₙₒₜ gₒᵢₙg ₜₒ w�
 - [x] add hashes for navigation (table of contents?)
 - [x] make weirdness progress progressively
 - [ ] spontaneously *add* list elements (???) (element.insertAdjacentHTML())
+- [ ] random ad selection
