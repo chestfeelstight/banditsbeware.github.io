@@ -61,7 +61,7 @@ const animeGirls = ["rei.gif","rei.jpg","rei1.jpeg","rei.webp","rei.jpeg","asuka
 const animeGirlsChance = 0.02;
 
 // frequency at which list items literally go away forever
-const adiosFrequency = 15 * 1000;
+const adiosFrequency = chance(0.01) ? 500 : 15 * 1000;
 
 // chance for Kjakman to become covert spy, using alias
 const KjakmanDisappears = 1;
