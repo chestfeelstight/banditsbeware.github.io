@@ -30,7 +30,7 @@ body { margin: 0; }
 	position: fixed;
 	width: 300px;
 	height: 300px;
-	background-image: url('/gifs/stars.gif');
+	background-image: url('../gifs/stars.gif');
 	background-size: 90%;
 	overflow-y: scroll;
 }
@@ -47,13 +47,12 @@ body { margin: 0; }
 }
 
 #bottom-banner-ad {
-	position: fixed; 
-	display: none;
-	top: 50%; 
-	left: 50%; 
-	margin-left: -300px; 
-	margin-top: 50%;
-	border: 5px solid black;
+	position: fixed;
+ display: none;
+	left: 50%;
+ bottom: 30px;
+	margin-left: -300px;
+	border: 5px solid;
 }
 
 li ol { list-style-type: lower-alpha; }

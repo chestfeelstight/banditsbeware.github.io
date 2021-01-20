@@ -13,3 +13,4 @@ little pincers in a BIG new way (yₒᵤ'ᵣₑ ₙₒₜ gₒᵢₙg ₜₒ w�
 - [x] make weirdness progress progressively
 - [ ] spontaneously *add* list elements (???) (element.insertAdjacentHTML())
 - [ ] random ad selection
+- [ ] autoplay youtube embeds cause the parameters don't work this year

@@ -72,8 +72,7 @@ document.addEventListener('keydown', function(event) {
 let adShowing = false;
 let ad = $("#bottom-banner-ad");
 setInterval(() => {
-  let coo = randColor();
-  ad.css("border", `5px solid ${coo}`);
+  if (adShowing) ad.css("border", `5px solid ${randColor()}`);
   if (!adShowing && chance(adChance)) {
     ad.fadeIn();
     adShowing = true;
