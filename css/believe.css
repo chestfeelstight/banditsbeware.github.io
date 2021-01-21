@@ -46,11 +46,11 @@ body { margin: 0; }
 	color: white;
 }
 
-#bottom-banner-ad {
+#bottom-beetle {
 	position: fixed;
- display: none;
+	display: none;
 	left: 50%;
- bottom: 30px;
+	bottom: 30px;
 	margin-left: -300px;
 	border: 5px solid;
 }

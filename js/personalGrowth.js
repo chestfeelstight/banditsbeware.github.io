@@ -70,7 +70,8 @@ document.addEventListener('keydown', function(event) {
 });
 
 let adShowing = false;
-let ad = $("#bottom-banner-ad");
+let ad = $("#bottom-beetle");
+ad.attr("src", "./images/beetle/horz/horz1.jpg");
 setInterval(() => {
   if (adShowing) ad.css("border", `5px solid ${randColor()}`);
   if (!adShowing && chance(adChance)) {
