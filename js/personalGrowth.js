@@ -11,24 +11,24 @@ $(window).resize(() => {
 });
 
 // puts extend function on some list items
-for (let i=0; i<bigList.length; i++)
+for (let i=beginExtend; i<bigList.length; i++)
  if (chance(extendChance)) bigList.get(i).setAttribute("onmouseenter", "e_x_t_e_n_d(this)");
 
 // set interval for budging
 setInterval(() => {
- let n = randInt(100, bigList.length);
+ let n = randInt(beginBudge, bigList.length);
  budge(bigList[n]);
 }, budgeInterval);
 
 // set interval for flickering
 setInterval(() => {
- let n = randInt(50, bigList.length);
+ let n = randInt(beginFlicker, bigList.length);
  flicker(bigList[n]);
 }, flickerInterval);
 
 // set interval for adios
 setInterval(() => {
-  let n = randInt(200, bigList.length);
+  let n = randInt(beginAdios, bigList.length);
   adios(bigList[n]);
 }, adiosFrequency);
 

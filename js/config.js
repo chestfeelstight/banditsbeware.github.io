@@ -76,3 +76,9 @@ const sideBeetleTimeout = 6 * 1000;
 
 // chance for Kjakman to become covert spy, using alias
 const KjakmanDisappears = 1;
+
+// points at which effects may start acting on elements
+const beginExtend = 20;
+const beginBudge = 50;
+const beginFlicker = 100;
+const beginAdios = 20;
