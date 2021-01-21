@@ -79,32 +79,33 @@ document.addEventListener('keydown', function(event) {
   }
 });
 
-let bottomBeetleShowing = false;
-let bottomBeetle = $("#bottom-beetle");
-bottomBeetle.attr("src", "./images/beetle/horz/horz1.jpg");
+let horzBeetleShowing = false;
+let horzBeetle = $("#horz-beetle");
+horzBeetle.attr("src", "./images/beetle/horz2.png");
 setInterval(() => {
-  if (bottomBeetleShowing) bottomBeetle.css("border", `5px solid ${randColor()}`);
-  if (!bottomBeetleShowing && chance(bottomBeetleChance)) {
-    bottomBeetle.fadeIn();
-    bottomBeetleShowing = true;
+  if (horzBeetleShowing) horzBeetle.css("border", `5px solid ${randColor()}`);
+  if (!horzBeetleShowing && chance(horzBeetleChance)) {
+    horzBeetle.attr("src", `./images/beetle/horz${randInt(0, numHorzBeetles)}.png`);
+    horzBeetle.fadeIn();
+    horzBeetleShowing = true;
     setTimeout(() => {
-      bottomBeetle.fadeOut();
-      bottomBeetleShowing = false;
-    }, bottomBeetleTimeout);
+      horzBeetle.fadeOut();
+      horzBeetleShowing = false;
+    }, horzBeetleTimeout);
   }
 }, 250);
 
-let sideBeetleShowing = false;
-let sideBeetle = $("#side-beetle");
-sideBeetle.attr("src", "./images/beetle/vert/vert0.png");
+let vertBeetleShowing = false;
+let vertBeetle = $("#vert-beetle");
 setInterval(() => {
-  if (sideBeetleShowing) sideBeetle.css("border", `5px solid ${randColor()}`);
-  if (!sideBeetleShowing && chance(sideBeetleChance)) {
-    sideBeetle.fadeIn();
-    sideBeetleShowing = true;
+  if (vertBeetleShowing) vertBeetle.css("border", `5px solid ${randColor()}`);
+  if (!vertBeetleShowing && chance(vertBeetleChance)) {
+    vertBeetle.attr("src", `./images/beetle/vert${randInt(0, numVertBeetles)}.png`);
+    vertBeetle.fadeIn();
+    vertBeetleShowing = true;
     setTimeout(() => {
-      sideBeetle.fadeOut();
-      sideBeetleShowing = false;
-    }, sideBeetleTimeout);
+      vertBeetle.fadeOut();
+      vertBeetleShowing = false;
+    }, vertBeetleTimeout);
   }
 }, 250);

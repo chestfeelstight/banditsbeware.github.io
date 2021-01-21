@@ -49,7 +49,7 @@ body { margin: 0; }
 	color: white;
 }
 
-#bottom-beetle {
+#horz-beetle {
 	position: fixed;
 	display: none;
 	left: 50%;
@@ -58,7 +58,7 @@ body { margin: 0; }
 	border: 5px solid;
 }
 
-#side-beetle {
+#vert-beetle {
 	position: fixed;
 	display: none;
 	top: 50%;

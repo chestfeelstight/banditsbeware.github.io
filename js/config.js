@@ -67,12 +67,16 @@ const tocLength = 10;
 const adiosFrequency = 15 * 1000;
 
 // chance for an add to pop up every .25s
-const bottomBeetleChance = 0.01;
-const sideBeetleChance = 0.01;
+const horzBeetleChance = 0.01;
+const vertBeetleChance = 0.01;
 
 // how long the banner ad stays up
-const bottomBeetleTimeout = 5 * 1000;
-const sideBeetleTimeout = 6 * 1000;
+const horzBeetleTimeout = 5 * 1000;
+const vertBeetleTimeout = 6 * 1000;
+
+// number of beetles
+const numHorzBeetles = 3;
+const numVertBeetles = 2;
 
 // chance for Kjakman to become covert spy, using alias
 const KjakmanDisappears = 1;
