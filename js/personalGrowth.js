@@ -44,7 +44,7 @@ if (chance(westernChance))
  $("#main-list").css("listStyleType",pick(listStyleTypes));
 
 // turns icon into a random icon
-$("#icon").attr("href", `./icons/${pick(iconList)}.png`);
+$("#icon").attr("href", `./images/icons/icon${randInt(0,numIcons)}.png`);
 
 // turns title into random list item on hover, click to go there
 let title = $("#main-title");

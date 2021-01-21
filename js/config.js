@@ -1,8 +1,8 @@
 // configuration file for random numbers and things
 // (should make it easier for anyone to tweak website behavior)
 
-// list of icons - make sure the file is a .png!
-const iconList = ["big_wood", "carl_T", "conical_frustum", "atop", "facebook", "fear", "random_walk", "x", "jeff"];
+// number of icons in the icons folder
+const numIcons = 10;
 
 // fun double quotes game - quote characters
 const quoteList = ["'","'","'",",","❟","‘","❜","⹂","‛","❛","'̶̛̗̪̗̼͍͒̉̐̒̄̀̾́̍̉̊̇̿̚’"];
