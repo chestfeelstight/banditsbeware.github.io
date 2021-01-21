@@ -75,8 +75,8 @@ const horzBeetleTimeout = 5 * 1000;
 const vertBeetleTimeout = 6 * 1000;
 
 // number of beetles
-const numHorzBeetles = 3;
-const numVertBeetles = 2;
+const numHorzBeetles = 4;
+const numVertBeetles = 3;
 
 // chance for Kjakman to become covert spy, using alias
 const KjakmanDisappears = 1;
