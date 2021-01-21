@@ -12,5 +12,6 @@ little pincers in a BIG new way (yₒᵤ'ᵣₑ ₙₒₜ gₒᵢₙg ₜₒ w�
 - [x] add hashes for navigation (table of contents?)
 - [x] make weirdness progress progressively
 - [ ] spontaneously *add* list elements (???) (element.insertAdjacentHTML())
-- [ ] random ad selection
+- [x] random ad selection
 - [ ] autoplay youtube embeds cause the parameters don't work this year
+- [ ] make ads have links (might be difficult)
