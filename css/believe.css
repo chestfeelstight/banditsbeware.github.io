@@ -1,9 +1,12 @@
 html {
 	scroll-behavior: smooth;
+	overflow-x: hidden;
 	font-family: "Times New Roman";
 	/* font-size: 0.8em; */
 	color: black;
 }
+
+html::-webkit-scrollbar { display: none; }
 
 body { margin: 0; }
 
@@ -24,8 +27,8 @@ body { margin: 0; }
 	list-style-position: inside;
 }
 
-#ephemeral-menu-bar {
-	border: 2px solid rebeccapurple;
+#tocbox {
+	border: 5px ridge rgb(175, 133, 218);
 	color: white;
 	position: fixed;
 	width: 300px;
@@ -35,13 +38,13 @@ body { margin: 0; }
 	overflow-y: scroll;
 }
 
-#ephemeral-menu-bar::-webkit-scrollbar { display: none; }
+#tocbox::-webkit-scrollbar { display: none; }
 
-#ephemeral-menu-bar li {
+#tocbox li {
 	margin-bottom: 10px;
 }
 
-#ephemeral-menu-bar a {
+#tocbox a {
 	text-decoration: none;
 	color: white;
 }
@@ -52,6 +55,15 @@ body { margin: 0; }
 	left: 50%;
 	bottom: 30px;
 	margin-left: -300px;
+	border: 5px solid;
+}
+
+#side-beetle {
+	position: fixed;
+	display: none;
+	top: 50%;
+	right: 30px;
+	margin-top: -300px;
 	border: 5px solid;
 }
 

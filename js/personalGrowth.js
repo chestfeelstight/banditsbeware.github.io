@@ -1,9 +1,14 @@
 /* things that run on page load */
 
-let bigList = $("li");
+let bigList = $("#main-list li");
 
-// for some reason, the page was scrolling a little to the right on refresh. this puts it back to the left
-$("body, html").scrollLeft(-100);
+// viewWidth & viewHeight will always represent the dimensions of the viewport! wow!
+let viewWidth = $(window).width();
+let viewHeight = $(window).height();
+$(window).resize(() => {
+  viewWidth = $(window).width();
+  viewHeight = $(window).height();
+});
 
 // puts extend function on some list items
 for (let i=0; i<bigList.length; i++)
@@ -60,26 +65,46 @@ if (chance(KjakmanDisappears))
   */
 
 // press 'c' for table of contentss
+let toc = $(sample(bigList, tocLength));
+for (let i=0; i<tocLength; i++) {
+  $(toc[i]).attr("id", `toc${i}`);
+  $("#tocbox ul").append(`<li><a href="#toc${i}">${$(toc[i]).html()}</a></li>`)
+}
 document.addEventListener('keydown', function(event) {
   if (event.key === 'c') {
-    $('#ephemeral-menu-bar').toggle();
-    $('#ephemeral-menu-bar').css('margin-left', `${randInt(0, 80)}%`);
-    $('#ephemeral-menu-bar').css('margin-top', `${randInt(0, 80)}%`);
+    $('#tocbox').toggle();
+    $('#tocbox').css('margin-left', `${randInt(0, viewWidth - 300)}px`);
+    $('#tocbox').css('margin-top', `${randInt(0, viewHeight - 300)}px`);
     $('#important-instructions-1').html('good job!');
   }
 });
 
-let adShowing = false;
-let ad = $("#bottom-beetle");
-ad.attr("src", "./images/beetle/horz/horz1.jpg");
+let bottomBeetleShowing = false;
+let bottomBeetle = $("#bottom-beetle");
+bottomBeetle.attr("src", "./images/beetle/horz/horz1.jpg");
 setInterval(() => {
-  if (adShowing) ad.css("border", `5px solid ${randColor()}`);
-  if (!adShowing && chance(adChance)) {
-    ad.fadeIn();
-    adShowing = true;
+  if (bottomBeetleShowing) bottomBeetle.css("border", `5px solid ${randColor()}`);
+  if (!bottomBeetleShowing && chance(bottomBeetleChance)) {
+    bottomBeetle.fadeIn();
+    bottomBeetleShowing = true;
     setTimeout(() => {
-      ad.fadeOut();
-      adShowing = false;
-    }, adTimeout);
+      bottomBeetle.fadeOut();
+      bottomBeetleShowing = false;
+    }, bottomBeetleTimeout);
+  }
+}, 250);
+
+let sideBeetleShowing = false;
+let sideBeetle = $("#side-beetle");
+sideBeetle.attr("src", "./images/beetle/vert/vert0.png");
+setInterval(() => {
+  if (sideBeetleShowing) sideBeetle.css("border", `5px solid ${randColor()}`);
+  if (!sideBeetleShowing && chance(sideBeetleChance)) {
+    sideBeetle.fadeIn();
+    sideBeetleShowing = true;
+    setTimeout(() => {
+      sideBeetle.fadeOut();
+      sideBeetleShowing = false;
+    }, sideBeetleTimeout);
   }
 }, 250);
