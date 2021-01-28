@@ -109,3 +109,15 @@ setInterval(() => {
     }, vertBeetleTimeout);
   }
 }, 250);
+
+// todo: conga line
+let dp = $("#dance-party-button");
+dp.click(() => {
+  dp.css({"color":"black", "text-decoration":"line-through"});
+  setInterval(()=>{
+    for (let i=0; i<bigList.length; i++) {
+      $(bigList[i]).css("color", `${randColor()}`);
+    }
+  }, 100);
+  $("img.dancing").fadeIn();
+});
