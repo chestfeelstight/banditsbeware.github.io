@@ -109,3 +109,24 @@ setInterval(() => {
     }, vertBeetleTimeout);
   }
 }, 250);
+
+let a = new Audio('./audio/harmonica.mp3');
+a.volume = 0.75;
+// todo: conga line
+let dp = $("#dance-party-button");
+dp.click(() => {
+  $("img.dancing").fadeIn();
+  a.play();
+  let party = setInterval(()=>{
+    for (let i=0; i<bigList.length; i++) {
+      $(bigList[i]).css("color", `${randColor()}`);
+    }
+    if (a.ended) {
+      $("img.dancing").fadeOut();
+      clearInterval(party);
+      dp.css({"color":"black", "text-decoration":"line-through"});
+      for (let i=0; i<bigList.length; i++) $(bigList[i]).css("color", "black");
+    }
+  }, 100);
+  dp.click(null);
+});

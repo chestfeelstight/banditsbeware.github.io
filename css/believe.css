@@ -76,6 +76,12 @@ li ol ol ol ol ol ol { list-style-type: decimal; }
 li ol ol ol ol ol ol ol { list-style-type: lower-alpha; }
 /* when will it end */
 
+img.dancing {
+	display:none;
+	position: fixed;
+	bottom:0px;
+}
+
 span.BIG_whale {
 	font-size: 160%;
 	color: rgb(126, 87, 189);
