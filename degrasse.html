@@ -6,12 +6,35 @@
 		<title>degrasse.html</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style>
+			@keyframes pulse {
+				0% {-webkit-transform: scale(1,1);}
+				10% {-webkit-transform: scale(1.05,1.05);}
+			}
+			html {
+				overflow: hidden;
+			}
+			body {
+				background: url('./gifs/bg2.gif');
+				background-size: 7px;
+				font-family: Georgia;
+				text-align: center;
+			}
+			#degrasse {
+				display: block; 
+				margin: 100px auto;
+				animation: pulse 0.7s infinite;
+				border: 10px solid rgb(194, 144, 194);
+				border-radius: 50%;
+			}
+		</style>
 	</head>
-	<body style="background: url('./gifs/bg1.gif')">
-		<h1 style="font-family:Georgia; text-align:center">welcome!</h1>
-		<p style="text-align:center">here</p>
-		<!-- <img style="display: block; margin: 200px auto" src="https://picsum.photos/500"> -->
-		<img width=200 style="display: block; margin: 200px auto" src="./images/black_science_man.jpg">
+	<body>
+		<iframe autoplay allow="autoplay" width="0" height="0" src="https://www.youtube.com/embed/QO9K6WEb044?autoplay=1&loop=1&playlist=QO9K6WEb044" frameborder="0"></iframe>
+		<div style="height: 150px"></div>
+		<h1>w e l c o m e</h1>
+		<p>here</p>
+		<img id="degrasse" width=400 src="./images/black_science_man.jpg">
 		<!-- TODO: get an NDT tweet to display above the image...
 		the problem is still authorization -->
 	</body>
