@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>degrasse.html</title>
+		<title>ｓｃｉｅｎｃｅ</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<style>
@@ -11,8 +11,13 @@
 				0% {-webkit-transform: scale(1,1);}
 				10% {-webkit-transform: scale(1.05,1.05);}
 			}
+			@keyframes rainbow {
+					0% {filter: hue-rotate(0deg);}
+					100% {filter: hue-rotate(360deg);}
+			}
 			html {
 				overflow: hidden;
+				cursor: url('./gifs/bg3.gif'), auto;
 			}
 			body {
 				background: url('./gifs/bg2.gif');
@@ -20,20 +25,30 @@
 				font-family: Georgia;
 				text-align: center;
 			}
+			h1 {
+				color: purple;
+				animation: rainbow 3s infinite;
+				font-size: 500%;
+			}
 			#degrasse {
 				display: block; 
 				margin: 100px auto;
-				animation: pulse 0.7s infinite;
-				border: 10px solid rgb(194, 144, 194);
+				animation: pulse 0.7s infinite, rainbow 8s infinite;
+				border: 10px solid white;
 				border-radius: 50%;
+				box-shadow: 0px 0px 100px 50px blue;
 			}
+			a:hover { cursor: url('./gifs/bg3.gif'), auto; }
 		</style>
 	</head>
 	<body>
-		<iframe hidden autoplay allow="autoplay" width="0" height="0" src="https://www.youtube.com/embed/QO9K6WEb044?autoplay=1&loop=1&playlist=QO9K6WEb044" frameborder="0"></iframe>
-		<div style="height: 100px"></div>
+		<iframe hidden autoplay allow="autoplay" width="0" height="0" src="https://www.youtube.com/embed/QO9K6WEb044?autoplay=1&loop=1&volume=.25&playlist=QO9K6WEb044" frameborder="0"></iframe>
+		<script>
+			let degrasse = new Audio('./audio/degrasse.mp3');
+			setTimeout(() => {degrasse.play();}, 3000);
+		</script>
 		<h1>d e g r a s s e</h1>
-		<img id="degrasse" width=400 src="./images/black_science_man.jpg">
+		<a href="./depth.html"><img id="degrasse" width=400 src="./images/black_science_man.jpg"></a>
 		<!-- TODO: get an NDT tweet to display above the image...
 		the problem is still authorization -->
 	</body>
