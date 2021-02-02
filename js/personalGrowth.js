@@ -120,7 +120,7 @@ dp.click(() => {
     $("img.dancing").fadeIn();
     a.play();
     let party = setInterval(()=>{
-      for (let i=0; i<bigList.length; i++) {
+      for (let i=0; i<200; i++) {
         $(bigList[i]).css("color", `${randColor()}`);
       }
       if (a.ended) {
