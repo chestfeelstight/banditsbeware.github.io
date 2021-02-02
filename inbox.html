@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>ｃｌｕｔｔｅｒ</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="./js/jquery-3.5.1.min.js"></script>
+		<script src="./js/wetlands.js"></script>
+		<link rel="stylesheet" href="./css/fonts.css">
+		<style>
+			html {
+				overflow: hidden;
+				background-image: url('./gifs/bg1.gif');
+				background-size: 0.75%;
+				cursor: url('./images/bg1_min.gif'), auto;
+			}
+			body {
+				font-family: nunito;
+				margin: 0 8%;
+				max-width: 900px;
+			}
+			h1 {
+				margin-left:-25px; 
+				font-size: 300%; 
+				background-color: beige;
+				width: min-content;
+				padding: 5px 15px;
+			}
+			th, td {
+				border: 2px inset beige;
+				padding: 5px;
+				overflow: hidden;
+				white-space: nowrap;
+				text-align: left;
+			}
+			table {
+				table-layout: fixed;
+				background-color: white;
+				border-collapse: collapse;
+				border: 1px solid black;
+				width: 100%;
+			}
+			.preview {
+				width: 55%;
+				background: -webkit-linear-gradient(left, black 50%, white);
+				background-clip: text;
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+			}
+			tr:hover {
+				font-weight:bold;
+			}
+
+		</style>
+	</head>
+	<body>
+		<iframe hidden autoplay allow="autoplay" src="https://www.youtube.com/embed/inidC-Vpv94?autoplay=1&loop=1&playlist=inidC-Vpv94" frameborder="0"></iframe>
+		<h1>Inbox</h1>
+		<!-- eventually, these will be tweets -->
+		<table hidden>
+			<tr style="background-color: beige;">
+				<th style="width: 100px;">From</th><th style="width: 150px;">Subject</th><th>Preview</th><th style="width: 100px;">Date</th>
+			</tr>
+			<tr>
+				<td class="from">mark</td>
+				<td>hey y'all...</td>
+				<td class="preview">there's something in my backyard. who knows. this is a really long story! hopefully, it will just cut it off.</td>
+				<td class="date"></td>
+			</tr>
+			<tr>
+				<td class="from">Ann</td>
+				<td>please respond</td>
+				<td class="preview">You know we can't keep pretending. There's something I need you to know.</td>
+				<td class="date"></td>
+			</tr>
+			<tr>
+				<td class="from">john</td>
+				<td>cold</td>
+				<td class="preview">Hello. I am seriously very cold. As a prerequisite, I would have expected you to</td>
+				<td class="date"></td>
+			</tr>
+			<tr>
+				<td class="from">todd</td>
+				<td>quick question</td>
+				<td class="preview">広義ではBS衛星放送の有料放送も含まれるが当記事では狭義の説明を行う</td>
+				<td class="date"></td>
+			</tr>
+			<tr>
+				<td class="from">mary</td>
+				<td>Maya's problem</td>
+				<td class="preview">Hey there. As you know, Maya and I haven't exactly been keeping up with our</td>
+				<td class="date"></td>
+			</tr>
+			<tr>
+				<td class="from">kent</td>
+				<td>Account Services</td>
+				<td class="preview">You're in trouble, old friend. I found out yesterday about the strategic position</td>
+				<td class="date"></td>
+			</tr>
+			<tr>
+				<td class="from">roxy</td>
+				<td>tigers & lions</td>
+				<td class="preview">Hello, I was wondering if you could give me some information about the zoo. There's</td>
+				<td class="date"></td>
+			</tr>
+			<tr>
+				<td class="from">[name]</td>
+				<td>Family work</td>
+				<td class="preview">You and your family are probably working. In chapter 3, we will begin to discuss the</td>
+				<td class="date"></td>
+			</tr>
+			<tr>
+				<td class="from">harold</td>
+				<td>key attributes</td>
+				<td class="preview">Strength be with you. I heard about what happened last week -- you must feel awful. I'm</td>
+				<td class="date"></td>
+			</tr>
+			<tr>
+				<td class="from">Gene</td>
+				<td>UML News</td>
+				<td class="preview">Good Afternoon. Are your ER diagrams out of bounds? ER Model Concepts is our newest course</td>
+				<td class="date"></td>
+			</tr>
+			<tr>
+				<td class="from">lonnie</td>
+				<td>Blink!</td>
+				<td class="preview">relationships between entities. that's what it's all about! You and I have a lot to talk about</td>
+				<td class="date"></td>
+			</tr>
+			<tr>
+				<td class="from">june</td>
+				<td>Two things</td>
+				<td class="preview">First of all, every single time Eric messages me, there ends up being a massive conflict. I</td>
+				<td class="date"></td>
+			</tr>
+			<tr>
+				<td class="from">walter</td>
+				<td>Productivity</td>
+				<td class="preview">Hello. You know some database somewhere is constantly crunching the numbers. It's got all your</td>
+				<td class="date"></td>
+			</tr>
+			<tr>
+				<td class="from">Elizabeth</td>
+				<td>ACU Admission</td>
+				<td class="preview">Dear Sir or Madam, they will continually lay out the data and application settings in this way</td>
+				<td class="date"></td>
+			</tr>
+			<tr>
+				<td class="from">Fred</td>
+				<td>Apology</td>
+				<td class="preview">I wanted to reach out and let you know that everything's going to be okay. We'll get through</td>
+				<td class="date"></td>
+			</tr>
+			<tr>
+				<td class="from">maria</td>
+				<td>engineering</td>
+				<td class="preview">Hello. This will require you to focus, for just a minute. there's nothing worse than</td>
+				<td class="date"></td>
+			</tr>
+			<tr>
+				<td class="from">mobile@serviceaccount.org</td>
+				<td>Your Next Move</td>
+				<td class="preview">Wow, what a year. your ER diagrams aren't going to fix themselves. Each department will</td>
+				<td class="date"></td>
+			</tr>
+			<tr>
+				<td class="from">nancy</td>
+				<td>US Secretary</td>
+				<td class="preview">Parenthetical expressions aren't the only thing changing this year. However, you don't have</td>
+				<td class="date"></td>
+			</tr>
+			<tr>
+				<td class="from">Ollie</td>
+				<td>highlighters</td>
+				<td class="preview">Unbelievable. did you read the Times this morning? The Republicans have completely</td>
+				<td class="date"></td>
+			</tr>
+		</table>
+	</body>
+	<script>
+		let dates = $(".date");
+		for (let i=0; i<dates.length; i++) $(dates[i]).text(`${randMonth()} ${randInt(1,32)}`);
+		setInterval(() => {
+			for (let i=0; i<dates.length; i++) $(dates[i]).text(`${randMonth()} ${randInt(1,32)}`);
+		}, randInt(5 * 1000, 10 * 1000));
+		setInterval(() => {
+			let cell = pick($(".preview"));
+			$(cell).css("background-image", `url('./gifs/bg1.gif')`);
+			setTimeout(() => { $(cell).removeAttr('style'); }, randInt(100, 3000));
+		}, 3000);
+		$("table").fadeIn(5000);
+	</script>
+</html>

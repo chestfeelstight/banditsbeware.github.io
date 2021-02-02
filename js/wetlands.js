@@ -20,6 +20,9 @@ const chance = (t) => Math.random() < t;
 // random color string, e.g. `rgb(R, G, B)`
 const randColor = () => `rgb(${randInt(0,255)}, ${randInt(0,255)}, ${randInt(0,255)})`
 
+// random month string
+const randMonth = () => pick(['January','February','March','April','May','June','July','August','September','October','November','December']);
+
 // toggle the display of quite a large number of quotation marks for the fun double quotes game
 const toggleQuotes = () => {
 	let lmt = document.getElementById("fun-double-quotes-game");
