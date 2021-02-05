@@ -2,17 +2,9 @@
 
 let bigList = $("#main-list li");
 
-// viewWidth & viewHeight will always represent the dimensions of the viewport! wow!
-let viewWidth = $(window).width();
-let viewHeight = $(window).height();
-$(window).resize(() => {
-  viewWidth = $(window).width();
-  viewHeight = $(window).height();
-});
-
 // puts extend function on some list items
 for (let i=beginExtend; i<bigList.length; i++)
- if (chance(extendChance)) bigList.get(i).setAttribute("onmouseenter", "e_x_t_e_n_d(this)");
+ if (chance(extendChance)) $(bigList[i]).attr("onmouseenter","extend(this)");
 
 // set interval for budging
 setInterval(() => {
@@ -25,6 +17,12 @@ setInterval(() => {
  let n = randInt(beginFlicker, bigList.length);
  flicker(bigList[n]);
 }, flickerInterval);
+
+setInterval(() => {
+  let n = randInt(beginFlicker, bigList.length);
+  flicker(bigList[n]);
+  budge(bigList[n]);
+}, flickerBudgeInterval);
 
 // set interval for adios
 setInterval(() => {
@@ -70,7 +68,7 @@ for (let i=0; i<tocLength; i++) {
   $(toc[i]).attr("id", `toc${i}`);
   $("#tocbox ul").append(`<li><a href="#toc${i}">${$(toc[i]).html()}</a></li>`)
 }
-document.addEventListener('keydown', function(event) {
+document.addEventListener('keydown', (event) => {
   if (event.key === 'c') {
     $('#tocbox').toggle();
     $('#tocbox').css('margin-left', `${randInt(0, viewWidth - 300)}px`);
