@@ -5,7 +5,7 @@
 const numIcons = 10;
 
 // fun double quotes game - quote characters
-const quoteList = ["'","'","'",",","❟","‘","❜","⹂","‛","❛","'̶̛̗̪̗̼͍͒̉̐̒̄̀̾́̍̉̊̇̿̚’"];
+const quoteList = ["'","\"","'",",","❟","‘","❜","⹂","‛","❛","'̶̛̗̪̗̼͍͒̉̐̒̄̀̾́̍̉̊̇̿̚’",",̦̘̳̟̤͉",",̞͙ͬ͠","'̷̬͇̼̜̗̰̜ͣͥ","҉","͘"];
 
 // fun double quotes game - wave parameters
 const minWaveLen = 10;

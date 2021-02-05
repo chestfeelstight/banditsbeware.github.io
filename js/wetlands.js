@@ -23,22 +23,6 @@ const randColor = () => `rgb(${randInt(0,255)}, ${randInt(0,255)}, ${randInt(0,2
 // random month string
 const randMonth = () => pick(['January','February','March','April','May','June','July','August','September','October','November','December']);
 
-// toggle the display of quite a large number of quotation marks for the fun double quotes game
-const toggleQuotes = () => {
-	let lmt = document.getElementById("fun-double-quotes-game");
-	if (lmt.classList.contains("filled"))  lmt.innerHTML = "";
-	else {
-		let waveLen = randInt(minWaveLen, maxWaveLen);
-		let waves = randInt(minWaves, maxWaves);
-		let wave = "", amplitude = 3 + Math.random() * 5;
-		let ap = pick(quoteList);
-
-		for (let j=0; j < waveLen; j++) wave += `<span style=\'font-size: ${(amplitude * Math.abs(j - waveLen/2))}px\'>${ap}</span>`;
-		for (let i=0; i<waves; i++) lmt.innerHTML += wave;
-	}
-	lmt.classList.toggle("filled");
-}
-
 // add some of li's last letter to li
 const e_x_t_e_n_d = (li) => {
 	if (li.innerHTML.indexOf("<ol>") < 0) {
