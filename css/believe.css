@@ -89,7 +89,7 @@ span.BIG_whale {
 
 table { border-collapse: collapse; }
 
-.George_Table th, td {
+#George_Table th, td {
 	border: 1px solid black;
 	padding: 10px;
 	margin: 0;
