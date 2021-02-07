@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>ｍｏｕｎｔａｉｎ 山</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="../js/jquery-3.5.1.min.js"></script>
+		<script src="../js/wetlands.js"></script>
+		<script src="../js/click.js"></script>
+		<style>
+			html { 
+				cursor: url('../gifs/cursor1.gif'), auto; 
+				overflow: hidden;
+			}
+			body {
+				margin: 0;
+				padding: 0;
+			}
+			div {
+				position: absolute;
+				width: 100vw;
+				height: 100vh;
+				color: rgb(134, 86, 153);
+			}
+			#layer1 {
+				background-image: url('../gifs/bg5.gif');
+				background-size: 30px;
+				z-index: 2;
+			}
+			#layer2 {
+				background-image: url('../images/yama.gif');
+				background-size: 100%;
+				background-repeat: no-repeat;
+				display: none;
+				z-index: 1;
+			}
+			p {
+				font-size: 400%;
+				text-align: center;
+				margin-top: 40vh;
+				display: none;
+				mix-blend-mode: difference;
+			}
+			p#ascend {
+				transition: 0.5s;
+				white-space: nowrap;
+				z-index: 3;
+			}
+			p#ascend:hover {
+				transition: 0.5s;
+				letter-spacing: 5px;
+				font-size: 410%;
+				color: rgb(161, 126, 175);
+			}
+			p#arrive {
+				margin-top: 30vh;
+				color: white;
+			}
+			</style>
+		</head>
+	<body>
+		<iframe hidden autoplay allow="autoplay" width="0" height="0" src="https://www.youtube.com/embed/-hfD9PGnxCk?autoplay=1&loop=1&playlist=-hfD9PGnxCk" frameborder="0"></iframe>
+		<div id="layer1"><p id="ascend">ａｓｃｅｎｄ ？</p></div>
+		<div id="layer2"><p id="arrive">ｗｏｒｋ<br>ｐｒｏｄｕｃｅ<br>ｃｏｎｓｕｍｅ<br>ｒｅｐｅａｔ</p></div>
+	</body>
+	<script>
+		let p1 = $("p#ascend");
+		let p2 = $("p#arrive");
+		p1.fadeIn(1000);
+		p1.click(()=> {
+			p1.animate({ letterSpacing: "100px", marginTop: "110vh", opacity: "0" }, 5000);
+			$("#layer1").animate({backgroundSize: "10px", opacity: "0"}, 10 * 1000);
+			setTimeout(() => $("#layer2").fadeIn(10 * 1000), 4000);
+			p2.fadeIn();
+		});
+	</script>
+</html>
