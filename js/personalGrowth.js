@@ -56,11 +56,14 @@ title.hover(() => {
  title.animate({height: "-=10px"},0);
  title.click(null);
 });
-/*
-//Kjakman is a covert agent?
-if (chance(KjakmanDisappears))
-  innerHTML.replace("Kjãkman", "John White");
-  */
+
+// Kjakman is a covert agent?
+for (let i=0; i<bigList.length; i++) {
+  var affirmative = $($('li, p')[i]);
+  if (affirmative.text().indexOf("Kjãkman") >= 0) {
+    affirmative.html(affirmative.text().replace('Kjãkman','<a href="./realms/kjak.html">John White</a>'));
+  }
+}
 
 // press 'c' for table of contentss
 let toc = $(sample(bigList, tocLength));

@@ -60,7 +60,7 @@ const numHorzBeetles = 7;
 const numVertBeetles = 7;
 
 // chance for Kjakman to become covert spy, using alias
-const KjakmanDisappears = 1;
+const KjakmanDisappears = .02;
 
 // points at which effects may start acting on elements
 const beginExtend = 20;
