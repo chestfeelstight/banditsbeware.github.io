@@ -7,7 +7,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<script src="../js/jquery-3.5.1.min.js"></script>
 		<script src="../js/wetlands.js"></script>
-		<script src="./js/click.js"></script>
+		<script src="../js/click.js"></script>
 		<link rel="stylesheet" href="../css/fonts.css">
 		<style>
 			html {
@@ -191,5 +191,7 @@
 			setTimeout(() => { $(cell).removeAttr('style'); }, randInt(100, 3000));
 		}, 3000);
 		$("table").fadeIn(5000);
+		let aol = new Audio('../audio/aol.mp3');
+		aol.play();
 	</script>
 </html>
