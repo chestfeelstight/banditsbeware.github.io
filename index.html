@@ -357,10 +357,14 @@
 		  	<li>Read <a href="./realms/onision.html">onision</a>'s books.</li>
 				<li>write a hit pop song</li>
      <li>Eat some of it throughout the night</li>
-		  	<b><em><li id="chew" title="click to CHEW"></li></em></b>
+		  	<b><em><li id="chew" title="click to CHEW">CHEW CHEW CHEW CHEW CHEW CHEW CHEW CHEW CHEW CHEW CHEW CHEW CHEW CHEW CHEW CHEW CHEW CHEW CHEW CHEWCHEW CHEW CHEWCHEW CHEW CHEW CHEW CHEW CHEW CHEW CHEW CHEW CHEW CHEW </li></em></b>
 				<script>
-					let chew = () => { for (let i=0; i<randInt(50,150); i++) setTimeout(()=>{$("#chew").append(chance(0.15) ? '<span style="font-size: 140%;">CHEW</span>' : 'CHEW ');}, 50 * i); };
-					chew(); $("#chew").click(chew);
+					let eat = new Audio('./audio/eat.mp3');
+					let chew = () => { 
+						for (let i=0; i<randInt(25, 75); i++) setTimeout(()=>{$("#chew").append(chance(0.15) ? '<span style="font-size: 140%;">CHEW</span>' : 'CHEW ');}, 50 * i); 
+						eat.play();
+					};
+					$("#chew").click(chew);
 				</script>
 			<img style=" margin-left: -100px; margin-right: 25px; width: 250px; z-index: -1; float: left; border: 2px dashed;" src="./gifs/cat_vibe.gif">
 			<li>figure out the difference between "a political thing"</li>
