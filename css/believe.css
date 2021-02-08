@@ -179,3 +179,7 @@ ol.invisible-list li { list-style-type: none; }
 	text-indent: 50px;
 }
 
+#ghost-li {
+	position: fixed;
+	z-index: 100;
+}

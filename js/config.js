@@ -63,7 +63,13 @@ const numVertBeetles = 7;
 const KjakmanDisappears = .02;
 
 // points at which effects may start acting on elements
-const beginExtend = 20;
-const beginBudge = 50;
-const beginFlicker = 100;
-const beginAdios = 20;
+const beginExtend = 40; 					// ... list items
+const budgeThreshold = 20; 				// ... percent throught document
+const flickerThreshold = 30; 			// ... percent throught document
+const flickerBudgeThreshold = 40; // ... percent throught document
+const adiosThreshold = 50; 				// ... percent throught document
+const ghostThreshold = 30;
+
+// ghost config
+const ghostInterval = 250;
+const ghostChance = 0.05;

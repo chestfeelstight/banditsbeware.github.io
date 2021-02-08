@@ -8,26 +8,34 @@ for (let i=beginExtend; i<bigList.length; i++)
 
 // set interval for budging
 setInterval(() => {
- let n = randInt(beginBudge, bigList.length);
- budge(bigList[n]);
+  if (scrollProgress > budgeThreshold) {
+    let n = randInt(0, bigList.length);
+    budge(bigList[n]);
+  }
 }, budgeInterval);
 
 // set interval for flickering
 setInterval(() => {
- let n = randInt(beginFlicker, bigList.length);
- flicker(bigList[n]);
+  if (scrollProgress > flickerThreshold) {
+    let n = randInt(0, bigList.length);
+    flicker(bigList[n]);
+  }
 }, flickerInterval);
 
 setInterval(() => {
-  let n = randInt(beginFlicker, bigList.length);
-  flicker(bigList[n]);
-  budge(bigList[n]);
+  if (scrollProgress > flickerBudgeThreshold) {
+    let n = randInt(0, bigList.length);
+    flicker(bigList[n]);
+    budge(bigList[n]);
+  }
 }, flickerBudgeInterval);
 
 // set interval for adios
 setInterval(() => {
-  let n = randInt(beginAdios, bigList.length);
-  adios(bigList[n]);
+  if (scrollProgress > adiosThreshold) {
+    let n = randInt(0, bigList.length);
+    adios(bigList[n]);
+  }
 }, adiosFrequency);
 
 // a chance for all images to be anime girls
@@ -135,3 +143,17 @@ dp.click(() => {
     }, 100);
   }
 });
+
+let ghostShowing = false;
+let ghost = $("#ghost-li");
+setInterval(()=> {
+  if (!ghostShowing && chance(ghostChance) && scrollProgress > ghostThreshold) {
+    ghostShowing = true;
+    ghost.html(`${randInt(1, bigList.length)}. ${$(pick(bigList)).html()}`)
+    relocate(ghost);
+    ghost.fadeIn();
+    setTimeout(()=> {
+      ghost.fadeOut(5000, ()=>{ghostShowing = false});
+    }, 2000);
+  }
+}, ghostInterval);

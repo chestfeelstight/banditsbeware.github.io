@@ -31,6 +31,12 @@ $(window).resize(() => {
   viewHeight = $(window).height();
 });
 
+// a variable to store the scroll progress! incredible!
+let scrollProgress;
+$(window).on('scroll', () => {
+	scrollProgress = 100 * document.scrollingElement.scrollTop / document.body.scrollHeight;
+});
+
 // add some of li's last letter to li
 const extend = (li) => {
 	if (li.innerHTML.indexOf("<ol>") < 0) {
@@ -70,4 +76,13 @@ const adios = (li) => {
 		opacity: 0.0,
 		height: '-5px'
 	}, 3000, () => $(li).hide());
+}
+
+// moves element e to a random position - works when e is 'position: absolute/fixed'
+const relocate = (e) => {
+	let newPos = {
+		left: `${randInt(0, viewWidth-$(e).outerWidth())}px`,
+		top: `${randInt(0, viewHeight-$(e).outerHeight())}px`
+	};
+	$(e).css(newPos);
 }
