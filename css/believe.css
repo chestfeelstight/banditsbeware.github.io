@@ -9,6 +9,8 @@ html::-webkit-scrollbar { display: none; }
 
 body { margin: 0; }
 
+a:visited { color: blue; }
+
 #main-title {
 	position: absolute;
 	width: 100%;
