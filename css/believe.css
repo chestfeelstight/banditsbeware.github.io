@@ -37,6 +37,7 @@ a:visited { color: blue; }
 	background-image: url('../gifs/stars.gif');
 	background-size: 90%;
 	overflow-y: scroll;
+	display: none;
 }
 
 #tocbox::-webkit-scrollbar { display: none; }

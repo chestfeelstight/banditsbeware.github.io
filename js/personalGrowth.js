@@ -74,18 +74,41 @@ if (chance(KjakmanDisappears)) {
     }
   }
 }
-// press 'c' for table of contentss
+
+// press 'c' for table of contentss!
+
+// select <tocLength> random elements and add links to the list in tocbox
 let toc = $(sample(bigList, tocLength));
 for (let i=0; i<tocLength; i++) {
   $(toc[i]).attr("id", `toc${i}`);
   $("#tocbox ul").append(`<li><a href="#toc${i}">${$(toc[i]).html()}</a></li>`)
 }
+// control visibility of #tocbox
+let tocbox = $("#tocbox");
+let tocShowing = false;
 document.addEventListener('keydown', (event) => {
   if (event.key === 'c') {
-    $('#tocbox').toggle();
-    $('#tocbox').css('margin-left', `${randInt(0, viewWidth - 300)}px`);
-    $('#tocbox').css('margin-top', `${randInt(0, viewHeight - 300)}px`);
-    $('#important-instructions-1').html('good job!');
+    if (tocShowing) {
+      tocbox.animate({
+        width: '0px', 
+        height: '0px', 
+        opacity: 0, 
+      }, 150, ()=>tocbox.toggle());
+      tocShowing = false;
+    } else {
+      $('#important-instructions-1').html('good job!');
+      tocbox.css({
+        marginLeft: `${randInt(0, viewWidth - 300)}px`,
+        marginTop : `${randInt(0, viewHeight - 300)}px`
+      });
+      tocbox.toggle();
+      tocbox.animate({
+        width: '300px',
+        height: '300px',
+        opacity: 1,
+      }, 150);
+      tocShowing = true;
+    }
   }
 });
 
