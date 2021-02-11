@@ -2,34 +2,40 @@
 
 let bigList = $("#main-list li");
 
-// viewWidth & viewHeight will always represent the dimensions of the viewport! wow!
-let viewWidth = $(window).width();
-let viewHeight = $(window).height();
-$(window).resize(() => {
-  viewWidth = $(window).width();
-  viewHeight = $(window).height();
-});
-
 // puts extend function on some list items
 for (let i=beginExtend; i<bigList.length; i++)
- if (chance(extendChance)) bigList.get(i).setAttribute("onmouseenter", "e_x_t_e_n_d(this)");
+ if (chance(extendChance)) $(bigList[i]).attr("onmouseenter","extend(this)");
 
 // set interval for budging
 setInterval(() => {
- let n = randInt(beginBudge, bigList.length);
- budge(bigList[n]);
+  if (scrollProgress > budgeThreshold) {
+    let n = randInt(0, bigList.length);
+    budge(bigList[n]);
+  }
 }, budgeInterval);
 
 // set interval for flickering
 setInterval(() => {
- let n = randInt(beginFlicker, bigList.length);
- flicker(bigList[n]);
+  if (scrollProgress > flickerThreshold) {
+    let n = randInt(0, bigList.length);
+    flicker(bigList[n]);
+  }
 }, flickerInterval);
+
+setInterval(() => {
+  if (scrollProgress > flickerBudgeThreshold) {
+    let n = randInt(0, bigList.length);
+    flicker(bigList[n]);
+    budge(bigList[n]);
+  }
+}, flickerBudgeInterval);
 
 // set interval for adios
 setInterval(() => {
-  let n = randInt(beginAdios, bigList.length);
-  adios(bigList[n]);
+  if (scrollProgress > adiosThreshold) {
+    let n = randInt(0, bigList.length);
+    adios(bigList[n]);
+  }
 }, adiosFrequency);
 
 // a chance for all images to be anime girls
@@ -58,24 +64,51 @@ title.hover(() => {
  title.animate({height: "-=10px"},0);
  title.click(null);
 });
-/*
-//Kjakman is a covert agent?
-if (chance(KjakmanDisappears))
-  innerHTML.replace("Kjãkman", "John White");
-  */
 
-// press 'c' for table of contentss
+// Kjakman is a covert agent?
+if (chance(KjakmanDisappears)) {
+  for (let i=0; i<bigList.length; i++) {
+    var affirmative = $($('li, p')[i]);
+    if (affirmative.text().indexOf("Kjãkman") >= 0) {
+      affirmative.html(affirmative.text().replace('Kjãkman','<a href="./realms/kjak.html">John White</a>'));
+    }
+  }
+}
+
+// press 'c' for table of contentss!
+
+// select <tocLength> random elements and add links to the list in tocbox
 let toc = $(sample(bigList, tocLength));
 for (let i=0; i<tocLength; i++) {
   $(toc[i]).attr("id", `toc${i}`);
   $("#tocbox ul").append(`<li><a href="#toc${i}">${$(toc[i]).html()}</a></li>`)
 }
-document.addEventListener('keydown', function(event) {
+// control visibility of #tocbox
+let tocbox = $("#tocbox");
+let tocShowing = false;
+document.addEventListener('keydown', (event) => {
   if (event.key === 'c') {
-    $('#tocbox').toggle();
-    $('#tocbox').css('margin-left', `${randInt(0, viewWidth - 300)}px`);
-    $('#tocbox').css('margin-top', `${randInt(0, viewHeight - 300)}px`);
-    $('#important-instructions-1').html('good job!');
+    if (tocShowing) {
+      tocbox.animate({
+        width: '0px', 
+        height: '0px', 
+        opacity: 0, 
+      }, 150, ()=>tocbox.toggle());
+      tocShowing = false;
+    } else {
+      $('#important-instructions-1').html('good job!');
+      tocbox.css({
+        marginLeft: `${randInt(0, viewWidth - 300)}px`,
+        marginTop : `${randInt(0, viewHeight - 300)}px`
+      });
+      tocbox.toggle();
+      tocbox.animate({
+        width: '300px',
+        height: '300px',
+        opacity: 1,
+      }, 150);
+      tocShowing = true;
+    }
   }
 });
 
@@ -133,3 +166,17 @@ dp.click(() => {
     }, 100);
   }
 });
+
+let ghostShowing = false;
+let ghost = $("#ghost-li");
+setInterval(()=> {
+  if (!ghostShowing && chance(ghostChance) && scrollProgress > ghostThreshold) {
+    ghostShowing = true;
+    ghost.html(`${randInt(1, bigList.length)}. ${$(pick(bigList)).html()}`)
+    relocate(ghost);
+    ghost.fadeIn();
+    setTimeout(()=> {
+      ghost.fadeOut(5000, ()=>{ghostShowing = false});
+    }, 2000);
+  }
+}, ghostInterval);

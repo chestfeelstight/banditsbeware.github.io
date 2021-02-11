@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>ｌｉｂｒａｒｙ　鉛バ凹</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="../js/jquery-3.5.1.min.js"></script>
+		<script src="../js/wetlands.js"></script>
+	</head>
+	<style>
+		html {
+			background-color: rgb(107, 93, 93);
+			overflow: hidden;
+		}
+		body {
+			background-image: url('../gifs/bg4.gif');
+			background-size: 2.5%;
+			margin: 0;
+			padding: 0;
+			height: 100vh;
+		}
+		iframe#libgen {
+			width: 100vw;
+			height: 100vh;
+		}
+		iframe#libgen::-webkit-scrollbar { display: none; }
+	</style>
+	<body>
+		<iframe hidden autoplay allow="autoplay" width="0" height="0" src="https://www.youtube.com/embed/IhBwQHPB58k?autoplay=1&loop=1&playlist=IhBwQHPB58k" frameborder="0"></iframe>
+		<iframe id="libgen" src="http://libgen.rs/search.php?req=Introduction+to+Algorithms&open=0&res=100&view=detailed&phrase=1&column=def" frameborder=0></iframe>
+
+	</body>
+	<script>
+		let frame = $("iframe#libgen");
+		let interval = randInt(1, 10);
+		setInterval(() => {
+			let theta = (Math.random() * 4) - 2;
+			frame.css("transform", `rotate(${theta}deg)`);
+			interval = randInt(1, 10);
+		}, 4000);
+	</script>
+</html>

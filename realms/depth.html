@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>ｄｅｅｐｅｒ？</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="../js/jquery-3.5.1.min.js"></script>
+		<script src="../js/cursortrail.js"></script>
+		<script src="../js/wetlands.js"></script>
+		<style>
+			@keyframes deity {
+				100% { -webkit-transform: rotate(360deg); }
+			}
+			html {
+				overflow: hidden;
+				cursor: url('../gifs/bg3.gif'), auto;
+				background: url('../gifs/bg2.gif');
+				background-size: 15px;
+			}
+			body {
+				font-family: Georgia;
+				text-align: center;
+			}
+			.deity-square {
+				background-color: rgba(106, 137, 196, 0.582);
+				position: absolute;
+				box-shadow: 0px 0px 100px rgb(255, 255, 255);
+				animation: deity linear infinite;
+			}
+			#message {
+				top: 50%;
+			}
+		</style>
+	</head>
+	<body></body>
+	<script>
+		let degrasse = new Audio('../audio/degrasse.mp3');
+		setTimeout(() => {degrasse.play();}, 500);
+		const deitySquare = (size, freq) => {
+			let duration = 1 / freq;
+			let left = viewWidth/2 - size/2;
+			let top = viewHeight/2 - size/2;
+			return `<div class="deity-square" style="width: ${size}px; height: ${size}px; 
+			left: ${left}px; top: ${top}px; animation-duration: ${duration}s;">`;
+		}
+		let numSquares = 10;
+		for (let i=0; i<numSquares; i++) $("body").append(deitySquare(800-(randInt(20,100)*i), 0.5 * Math.random()));
+		$("body").append(deitySquare(200, 0));
+	</script>
+</html>

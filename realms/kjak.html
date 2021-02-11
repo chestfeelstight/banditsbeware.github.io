@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>psst. over here.</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="">
+		<script src="../js/jquery-3.5.1.min.js"></script>
+		<script src="../js/wetlands.js"></script>
+        <link rel="icon" href="../images/icons/KjakmanIcon.png">
+
+		<style>
+			html {
+				overflow: hidden;
+			}
+		</style>
+	</head>
+	<body>
+        <img src="../images/cave.jpg" width="105%" style="z-index: -1; position: absolute; height: 1000px; margin-top: -520px; margin-left: -20px;" onclick="progress()">
+        <img src="../images/icons/KjakmanIcon.png" width="400px" style="z-index: 2; display: block; margin: 500px auto;">
+        <p id="demo" style="margin-top: -1000px; margin-left: 40px; text-shadow: white 1px 1px;"></p>
+    </body>
+    <script>
+        var k = 0;
+        var pppppp = false;
+        var txt = [
+            "psst! hey you! it's me, Kjãkman. i need your help. the CIA is after me, so I changed my name to John White and fled the country, but my family is still back in San Fernando.",
+            "You fat lard",
+            ];
+        var speed = 40;
+        function progress() {
+            if (!pppppp){
+                $('#demo').text("");
+                typeWriter(txt[k]);   
+                k++;
+            }
+        }
+        
+        function typeWriter(str) {
+            i = 0;
+            pppppp = true;
+            var fuk = setInterval(() => {
+                $('#demo').append(str.charAt(i));
+                if(i++ === str.length) {
+                    clearInterval(fuk);
+                    pppppp = false;
+                }
+            }, 40);
+        }
+        
+      
+    </script>
+</html>

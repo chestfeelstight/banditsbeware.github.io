@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>ｓｃａｎｎｅｒ</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="../js/jquery-3.5.1.min.js"></script>
+		<script src="../js/wetlands.js"></script>
+		<style>
+			html { 
+				overflow: hidden; 
+				background-color: rgb(172, 165, 165);
+			}
+			#label {
+				transition: 1s;
+				border: 2px solid black;
+				border-radius: 25px;
+				display: block;
+				display: grid;
+				position: relative;
+				margin: 100px auto;
+				width: 500px;
+				height: 600px;
+				padding: 10px 0;
+				grid-template-columns: repeat(10, 1fr);
+				background-color:rgb(192, 192, 192);
+			}
+			#label:hover {
+				transition: 0.5s;
+				margin-top: 80px;
+				box-shadow: 20px 20px 10px;
+			}
+			.cell {
+				/* border: 1px solid gray; */
+				overflow: hidden;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="label"></div>
+	</body>
+	<script>
+		let barcode = (len) => {
+			let str = '';
+			for (let i=0; i<len; i++) str += pick(['&#10073','&#10074']);
+			return str;
+		}
+
+		let label = $("#label");
+		label.hover(()=>{
+			label.css({marginLeft: "-=20px"});
+		}, ()=>{
+			label.css({marginLeft: "+=20px"});
+		});
+
+		let cell = (msg) => `<div class='cell'>${msg}</div>`;
+		for (let i=0; i<300; i++) label.append(cell(''));
+		setInterval(() => {
+			for (let i in $(".cell")) {
+				$(".cell")[i].innerHTML = barcode(8);
+			}
+		}, 750);
+	</script>
+</html>

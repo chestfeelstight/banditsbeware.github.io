@@ -2,13 +2,14 @@ html {
 	scroll-behavior: smooth;
 	overflow-x: hidden;
 	font-family: "Times New Roman";
-	/* font-size: 0.8em; */
 	color: black;
 }
 
 html::-webkit-scrollbar { display: none; }
 
 body { margin: 0; }
+
+a:visited { color: blue; }
 
 #main-title {
 	position: absolute;
@@ -36,6 +37,7 @@ body { margin: 0; }
 	background-image: url('../gifs/stars.gif');
 	background-size: 90%;
 	overflow-y: scroll;
+	display: none;
 }
 
 #tocbox::-webkit-scrollbar { display: none; }
@@ -89,7 +91,7 @@ span.BIG_whale {
 
 table { border-collapse: collapse; }
 
-.George_Table th, td {
+#George_Table th, td {
 	border: 1px solid black;
 	padding: 10px;
 	margin: 0;
@@ -178,4 +180,9 @@ ol.invisible-list li { list-style-type: none; }
 .gorlami-info p {
 	word-wrap: break-all;
 	text-indent: 50px;
+}
+
+#ghost-li {
+	position: fixed;
+	z-index: 100;
 }

@@ -23,28 +23,27 @@ const randColor = () => `rgb(${randInt(0,255)}, ${randInt(0,255)}, ${randInt(0,2
 // random month string
 const randMonth = () => pick(['January','February','March','April','May','June','July','August','September','October','November','December']);
 
-// toggle the display of quite a large number of quotation marks for the fun double quotes game
-const toggleQuotes = () => {
-	let lmt = document.getElementById("fun-double-quotes-game");
-	if (lmt.classList.contains("filled"))  lmt.innerHTML = "";
-	else {
-		let waveLen = randInt(minWaveLen, maxWaveLen);
-		let waves = randInt(minWaves, maxWaves);
-		let wave = "", amplitude = 3 + Math.random() * 5;
-		let ap = pick(quoteList);
+// viewWidth & viewHeight will always represent the dimensions of the viewport! wow!
+let viewWidth = $(window).width();
+let viewHeight = $(window).height();
+$(window).resize(() => {
+  viewWidth = $(window).width();
+  viewHeight = $(window).height();
+});
 
-		for (let j=0; j < waveLen; j++) wave += `<span style=\'font-size: ${(amplitude * Math.abs(j - waveLen/2))}px\'>${ap}</span>`;
-		for (let i=0; i<waves; i++) lmt.innerHTML += wave;
-	}
-	lmt.classList.toggle("filled");
-}
+// a variable to store the scroll progress! incredible!
+let scrollProgress;
+$(window).on('scroll', () => {
+	scrollProgress = 100 * document.scrollingElement.scrollTop / document.body.scrollHeight;
+});
 
 // add some of li's last letter to li
-const e_x_t_e_n_d = (li) => {
+const extend = (li) => {
 	if (li.innerHTML.indexOf("<ol>") < 0) {
 		let n = randInt(extMin, extMax);
+		let c = $(li).text()[$(li).text().length - 1];
 		let ntv = setInterval(() => {
-			li.textContent += li.textContent[li.textContent.length - 1];
+			$(li).append(c);
 			if (--n === 0) clearInterval(ntv);
 		}, randInt(extMaxSpeed, extMinSpeed));
 	}
@@ -55,7 +54,7 @@ const budge = (li) => {
 	let margin = $(li).css("margin-left");
 	let ntv = setInterval(() => {
 		$(li).css("margin-left", `${randInt(budgeMin,budgeMax)}px`);
-		setTimeout(() => { $(li).css("margin-left", margin); }, budgeSpeed/2);
+		setTimeout(() => { $(li).css("margin-left", margin); }, Math.random() * budgeSpeed);
 		if (--n === 0) clearInterval(ntv);
 	}	, budgeSpeed);
 	$(li).css("margin-left", margin);
@@ -63,13 +62,12 @@ const budge = (li) => {
 
 const flicker = (li) => {
  let n = randInt(flickerMinN, flickerMaxN);
- let color = $(li).css("color");
  let ntv = setInterval(() => {
-  $(li).css("color", "white");
-  setTimeout(() => { $(li).css("color", color); }, randInt(flickerSpeed*0.75));
+  $(li).css("opacity", "0");
+  setTimeout(() => { $(li).css("opacity", "1"); }, Math.random() * flickerOffSpeed);
   if (--n === 0) clearInterval(ntv);
- }, flickerSpeed);
- $(li).css("color", color);
+ }, flickerOffSpeed);
+ $(li).css("opacity", "1");
 }
 
 const adios = (li) => {
@@ -77,5 +75,14 @@ const adios = (li) => {
 		letterSpacing: '100px',
 		opacity: 0.0,
 		height: '-5px'
-	}, 2000, () => $(li).hide());
+	}, 3000, () => $(li).hide());
+}
+
+// moves element e to a random position - works when e is 'position: absolute/fixed'
+const relocate = (e) => {
+	let newPos = {
+		left: `${randInt(0, viewWidth-$(e).outerWidth())}px`,
+		top: `${randInt(0, viewHeight-$(e).outerHeight())}px`
+	};
+	$(e).css(newPos);
 }
