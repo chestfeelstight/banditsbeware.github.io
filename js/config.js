@@ -69,6 +69,11 @@ const flickerThreshold = 30; 			// ... percent throught document
 const flickerBudgeThreshold = 40; // ... percent throught document
 const adiosThreshold = 50; 				// ... percent throught document
 const ghostThreshold = 30;
+const errorThreshold = 40;
+
+// error config
+const errorTimeout = 3000;
+const errorChance = 0.1;
 
 // ghost config
 const ghostInterval = 250;
