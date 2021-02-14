@@ -56,7 +56,7 @@ const horzBeetleTimeout = 5 * 1000;
 const vertBeetleTimeout = 6 * 1000;
 
 // number of beetles
-const numHorzBeetles = 11;
+const numHorzBeetles = 12;
 const numVertBeetles = 9;
 
 // chance for Kjakman to become covert spy, using alias
@@ -69,6 +69,11 @@ const flickerThreshold = 30; 			// ... percent throught document
 const flickerBudgeThreshold = 40; // ... percent throught document
 const adiosThreshold = 50; 				// ... percent throught document
 const ghostThreshold = 30;
+const errorThreshold = 40;
+
+// error config
+const errorTimeout = 3000;
+const errorChance = 0.1;
 
 // ghost config
 const ghostInterval = 250;

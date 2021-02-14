@@ -180,3 +180,18 @@ setInterval(()=> {
     }, 2000);
   }
 }, ghostInterval);
+
+// TODO: have a variety of error messages to choose from
+let errorShowing = false;
+setInterval(() => {
+  if (!errorShowing && chance(errorChance) && scrollProgress > errorThreshold) {
+    errorShowing = true;
+    let err = $('#error');
+    relocate(err);
+    err.fadeIn();
+    setTimeout(() => {
+      err.fadeOut();
+      errorShowing = false;
+    }, errorTimeout);
+  }
+}, 1000);

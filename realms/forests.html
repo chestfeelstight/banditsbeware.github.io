@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 𝙛 𝙤 𝙧 𝙚 𝙨 𝙩 </title>
+    <script src="../js/jquery-3.5.1.min.js"></script>
+    <style>
+        html { overflow: hidden; }
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        #bg {
+            width: 100vw; height: 100vh;
+            background-image: url('../images/familiar/my_car_store.JPG');
+            background-size: 31vw 100vh;
+        }
+        #tx {
+            position: absolute;
+            top: 20vh; left: 10vw;
+            background-color: black;
+            color: white;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body><div id="bg"></div><p id="tx"></p></body>
+<script>
+    // array of strings for dialog
+    let dia = [
+        '... where\'s this..?',
+        'you wish to go back, but that place no longer exists.',
+        'if only there was someone who knew how to go back!',
+        '...', 'yeah, right...',
+        'when was the last time you saw someone you knew...',
+        '... who cared enough to help?',
+        '...', 'this is a strange place, but you could get used to it.',
+        'we\'re pretty adaptable creatures, after all.',
+        '...','you\'re sure it will be over soon.'
+    ];
+
+    /* 
+    run: is the printer currently running?
+    log: index for dialog progress
+    tx: element that receives dialog text
+    printer: stores the interval for printing
+    */
+    let run = false, log = 0, tx = $('#tx'), printer;
+
+    // function to run when window is clicked anywhere
+    $(window).on('click', () => {
+
+        // return to bucket list if there is no more dialog
+        if (log >= dia.length) setTimeout(()=>window.open('../index.html', '_self'), 1000);
+
+        // if the printer is NOT running... 
+        if (!run) {
+            run = true;
+            tx.text('');
+            let txt = dia[log++], i = 0;
+            printer = setInterval(() => {
+                tx.append(txt[i++]);
+                if (i === txt.length) {
+                    clearInterval(printer);
+                    run = false;
+                }
+            }, 30);
+
+        // if the printer IS running, stop it and complete the dialog
+        } else {
+            run = false;
+            clearInterval(printer);
+            tx.text(dia[log-1]);
+        }
+    });
+</script>
+</html>
