@@ -1,4 +1,4 @@
-/* things that run on page load */
+/* things that run when index.html loads */
 
 let bigList = $("#main-list li");
 
@@ -76,7 +76,6 @@ if (chance(KjakmanDisappears)) {
 }
 
 // press 'c' for table of contentss!
-
 // select <tocLength> random elements and add links to the list in tocbox
 let toc = $(sample(bigList, tocLength));
 for (let i=0; i<tocLength; i++) {
@@ -85,18 +84,15 @@ for (let i=0; i<tocLength; i++) {
 }
 // control visibility of #tocbox
 let tocbox = $("#tocbox");
-let tocShowing = false;
-document.addEventListener('keydown', (event) => {
+$(window).keydown((event) => {
   if (event.key === 'c') {
-    if (tocShowing) {
+    if ($('#tocbox:visible').length) {
       tocbox.animate({
         width: '0px', 
         height: '0px', 
         opacity: 0, 
       }, 150, ()=>tocbox.toggle());
-      tocShowing = false;
     } else {
-      $('#important-instructions-1').html('good job!');
       tocbox.css({
         marginLeft: `${randInt(0, viewWidth - 300)}px`,
         marginTop : `${randInt(0, viewHeight - 300)}px`
@@ -107,7 +103,6 @@ document.addEventListener('keydown', (event) => {
         height: '300px',
         opacity: 1,
       }, 150);
-      tocShowing = true;
     }
   }
 });
