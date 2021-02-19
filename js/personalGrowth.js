@@ -112,6 +112,18 @@ document.addEventListener('keydown', (event) => {
   }
 });
 
+// press 'D' to gain knowledge of scroll progress through document
+let updateProgress = () => $("#scroll-progress").text(`${scrollProgress.toFixed(1)}%`);
+$(window).keydown((event) => {
+  if (event.key == 'd') {
+    $('#scroll-progress').toggle();
+    updateProgress();
+  } 
+});
+$(window).on('scroll', () => {
+  if ($('#scroll-progress:visible').length) updateProgress();
+});
+
 let horzBeetleShowing = false;
 let horzBeetle = $("#horz-beetle");
 horzBeetle.attr("src", "./images/beetle/horz2.png");

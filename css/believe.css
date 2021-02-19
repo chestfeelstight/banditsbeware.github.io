@@ -51,6 +51,18 @@ a:visited { color: blue; }
 	color: white;
 }
 
+#scroll-progress {
+  display: none;
+  border: 5px outset rgb(230, 230, 230);
+  background-color: white;
+  padding: 5px;
+  font-family: monospace;
+  font-size: 1.5em;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+
 #horz-beetle {
 	position: fixed;
 	display: none;
