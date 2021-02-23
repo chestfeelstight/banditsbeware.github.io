@@ -5,8 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<title>ｄｅｅｐｅｒ？</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<script src="../js/jquery-3.5.1.min.js"></script>
-		<script src="../js/cursortrail.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 		<script src="../js/wetlands.js"></script>
 		<style>
 			@keyframes deity {
@@ -35,6 +34,15 @@
 	</head>
 	<body></body>
 	<script>
+    let mouse = { x: -1, y: -1 };
+    $(document).mousemove(function(event) { mouse.x = event.pageX; mouse.y = event.pageY; });
+    setInterval(() => {
+      $("html").append(`<img style="position: absolute; pointer-events: none;" class="cursor-trail" src="../gifs/bg3.gif">`);
+      $(".cursor-trail:last").css({'left': mouse.x, 'top': mouse.y});
+      $(".cursor-trail:last").fadeOut(500);
+      setTimeout(() => { $(".cursor-trail:first").remove(); }, 500);
+    }, 50);
+
 		let degrasse = new Audio('../audio/degrasse.mp3');
 		setTimeout(() => {degrasse.play();}, 500);
 		const deitySquare = (size, freq) => {

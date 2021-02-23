@@ -202,3 +202,5 @@ setInterval(() => {
     }, errorTimeout);
   }
 }, 1000);
+
+zalgify();
