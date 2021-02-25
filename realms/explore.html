@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ᵉˣᵖˡᵒʳᵉ...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+		<script src="../js/wetlands.js"></script>
+    <style>
+      html { 
+        overflow: hidden; 
+        background-image: url('../gifs/stars.gif');
+        background-size: 20%;  
+      }
+      body { margin: 0; padding: 0; }
+      @keyframes rotate {
+				100% { -webkit-transform: rotate(360deg); }
+			}
+      /* had to separate out the z-index animation, since the visible objects are bound to divs */
+      @keyframes zindex {
+        1%  { z-index: 10 ; }
+        49% { z-index: 10 ; }
+        51% { z-index:-10 ; }
+        99% { z-index:-10 ; }
+      }
+      @keyframes orbit {
+        0% { 
+          margin-left: 0;
+          font-size: 100%;
+        }
+        25% { font-size: 250%; }
+        50% { 
+          margin-left: 97%;
+          font-size: 100%;  
+        }
+        75% { font-size: 50%; }
+      }
+      /* keeps earth in the center of the universe */
+      #gravitational-field {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+      }
+      #earth {
+        width: 60%;
+        max-width: 650px;
+        animation: rotate 60s linear infinite;
+      }
+      .orbit {
+        position: fixed;
+        right:0; left:0;
+        margin: 0 auto;
+        /* turn on the background color to see orbitals! */
+        /* background-color: rgba(192, 242, 255, 0.048); */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- how ominous... -->
+		<iframe hidden autoplay allow="autoplay" width="0" height="0" src="https://www.youtube.com/embed/SG8qAqTEHwU?autoplay=1&loop=1&playlist=SG8qAqTEHwU" frameborder="0"></iframe>
+    <div id="gravitational-field">
+      <img id="earth" src="http://www.pngall.com/wp-content/uploads/2016/06/Globe-Free-Download-PNG.png">
+    </div>
+  </body>
+  <script>
+    // return a piece of HTML with an [obj] of choice
+    const moon = obj => `<div class="orbit"><p class="moon">${obj}</p></div>`;
+
+    // some emojis one might find in orbit
+    const objects = ['&#x2754','&#x2728','&#x1f680','&#x1f6b6','&#x23f0','&#x2601','&#x26a1','&#x26bd','&#x26c5','&#x2b50','&#x1f300','&#x1f308','&#x1f30c','&#x1f311','&#x1f319','&#x1f31f','&#x1f34c','&#x1f41f'];
+
+    const numMoons = randInt(1,100), orbitalPeriod = randInt(1,10);
+
+    // these values are set differently for each moon
+    let latitude, orbitalDiameter, delay;
+
+    // start adding moons to orbit!
+    for (let i = 0; i < numMoons; i++) {
+
+      // how far from the top of the screen the moon will orbit
+      latitude = randInt(50, viewHeight-75);
+
+      // quadratic equation centered at viewHeight/2
+      orbitalDiameter = (viewWidth - 50) - Math.pow(latitude - viewHeight/2, 2)/(0.3*viewWidth);
+
+      // delay so they're not all in sync
+      delay = Math.random() * orbitalPeriod;
+
+      // choose a random emoji and add it as a moon
+      $("body").append(moon(pick(objects)));
+
+      // set CSS for recently added orbit
+      $(".orbit:last").css({
+        "top": `${latitude}px`,
+        "width": `${orbitalDiameter}px`,
+        "animation": `zindex ${orbitalPeriod}s infinite`,
+        "animation-delay": `-${delay}s`
+      });
+
+      // set CSS for recently added moon
+      $(".moon:last").css({
+        "animation": `orbit ease-in-out infinite`,
+        "animation-duration": `${orbitalPeriod}s`,
+        "animation-delay": `-${delay}s`,
+      });
+
+      // chance to orbit in the other direction
+      if (chance(0.1)) {
+        $(".orbit:last").css("animation-direction", "reverse");
+        $(".moon:last").css("animation-direction", "reverse");
+      }
+    }
+  </script>
+</html>
