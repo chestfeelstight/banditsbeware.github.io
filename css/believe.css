@@ -1,6 +1,6 @@
 html {
 	scroll-behavior: smooth;
-	/* overflow-x: hidden; */
+	overflow-x: hidden;
 	font-family: "Times New Roman";
 	color: black;
 }

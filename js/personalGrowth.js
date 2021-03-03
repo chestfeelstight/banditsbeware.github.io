@@ -1,6 +1,7 @@
 /* things that run when index.html loads */
 
 let bigList = $("#main-list li");
+$(window).scrollLeft(-100);
 
 // puts extend function on some list items
 for (let i=beginExtend; i<bigList.length; i++)
@@ -119,6 +120,7 @@ $(window).on('scroll', () => {
   if ($('#scroll-progress:visible').length) updateProgress();
 });
 
+let horzLink, vertLink;
 let horzBeetleShowing = false;
 let horzBeetle = $("#horz-beetle");
 horzBeetle.attr("src", "./images/beetle/horz2.png");
@@ -126,6 +128,8 @@ setInterval(() => {
   if (horzBeetleShowing) horzBeetle.css("border", `5px solid ${randColor()}`);
   if (!horzBeetleShowing && chance(horzBeetleChance)) {
     horzBeetle.attr("src", `./images/beetle/horz${randInt(0, numHorzBeetles)}.png`);
+    horzLink = pick(beetleLinks);
+    horzBeetle.attr("onclick", `window.open('${horzLink}')`);
     horzBeetle.fadeIn();
     horzBeetleShowing = true;
     setTimeout(() => {
@@ -141,6 +145,8 @@ setInterval(() => {
   if (vertBeetleShowing) vertBeetle.css("border", `5px solid ${randColor()}`);
   if (!vertBeetleShowing && chance(vertBeetleChance)) {
     vertBeetle.attr("src", `./images/beetle/vert${randInt(0, numVertBeetles)}.png`);
+    vertLink = pick(beetleLinks);
+    vertBeetle.attr("onclick", `window.open('${vertLink}')`);
     vertBeetle.fadeIn();
     vertBeetleShowing = true;
     setTimeout(() => {
@@ -204,3 +210,9 @@ setInterval(() => {
 }, 1000);
 
 zalgify();
+
+let elements = $('.rand-margin');
+for (let i=0; i<elements.length; i++) {
+  let newMargin = randInt(-50, 200);
+  $(elements[i]).css('margin-left', `${newMargin}px`);
+}

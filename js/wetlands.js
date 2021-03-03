@@ -44,6 +44,17 @@ const tocLength = 10;
 // frequency at which list items literally go away forever
 const adiosFrequency = 15 * 1000;
 
+// list of sites that beetles could possibly link to
+const beetleLinks = [
+  'https://fauux.neocities.org', // Wired Sound for Wired People
+  'https://angusnicneven.com', // Terminal 00
+  'https://heavensgate.com/misc/vt092996.htm', // Last Chance to Evacuate Earth
+  'https://www.lingscars.com/', // Ling's cars
+  'http://www.878help.com/steveschicken.htm', // Steve's Really Good Chicken
+  'https://heckscaper.com/main.html', // Emma's Homepage
+  'http://www.notepad.org' // Notepad.org
+];
+
 // chance for an add to pop up every .25s
 const horzBeetleChance = 0.01;
 const vertBeetleChance = 0.01;
