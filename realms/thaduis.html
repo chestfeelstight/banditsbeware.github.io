@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ｔｈａｄｕｉｓ　ｃｌｅｅ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+		<script src="../js/wetlands.js"></script>
+    <style>
+      html { overflow: hidden; }
+      body {
+        background-image: url('../gifs/blinds.gif');
+        background-size: 150px;
+        background-color: rgb(98, 69, 165);
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+        white-space: pre;
+        text-align: center;
+        font-size: 150%;
+      }
+    </style>
+  </head>
+  <!-- blank banshee - eco zones -->
+  <iframe hidden autoplay allow='autoplay' width=0 height=0 src='https://www.youtube.com/embed/BnjEUfZPhu4?autoplay=1&loop=1&playlist=BnjEUfZPhu4'></iframe>
+  <body>
+
+
+
+
+
+ ______________________________________
+/     ___                     __ _     \
+|          __        __                 |
+|         |⭕|                |⭕|     |
+\        ---       | |       ---      /
+\     ___        /----\              /
+ \__________________________________/
+
+
+
+
+<em style="font-size: 150%;">become death destroyer.</em>
+  </body>
+  <script>
+    let husk = false;
+    setInterval(() => {
+      if (husk) {
+        $("body").css('background-color', 'rgb(98, 69, 165)');
+        husk = false;
+      } else {
+        if (chance(0.05)) {
+          $("body").css('background-color', 'black');
+          husk = true;
+        }
+      }
+    }, 75);
+  </script>
+</html>
