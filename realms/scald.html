@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>【 ｏｗｗｃｈ 🔥 】</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+		<script src="../js/wetlands.js"></script>
+    <style>
+      html { overflow: hidden; }
+      body {
+        background-image: url('../gifs/bg6.gif');
+        background-size: 5%;
+      }
+      #word {
+        font-size: 32px;
+        font-family: Times;
+        text-align: center;
+        color: tan;
+        position: absolute;
+        white-space: nowrap;
+      }
+    </style>
+  </head>
+  <!-- death's dynamic shroud.wmv - NO ♡♡♡ NO $​$​$ -->
+  <iframe hidden autoplay allow='autoplay' width=0 height=0 src='https://www.youtube.com/embed/jC5j1ZVMDvU?autoplay=1&loop=1&playlist=jC5j1ZVMDvU'></iframe>
+  <body><p id='word'></p></body>
+  <script>
+    let questions = [
+      'are you here?',
+      'are you virtual?',
+      'aren\'t you tired?',
+      'when will you go?',
+      'can you feel this?',
+      'who are you?',
+      'do I know you?',
+      'can we start over?',
+      'will this end?',
+      'will everything be okay?',
+      'will you leave me?'
+    ]
+    let fTime = 100;
+    let char = (c) => `<span class="char">${c}</span>`;
+    let word = (w) => {
+      let r = '';
+      for (let i = 0; i < w.length; i++) r += char(w[i]);
+      return r;
+    }
+
+    let tux = $("#word");
+    tux.html(word(pick(questions)));
+    relocate(tux);
+
+    tux.hover(() => {
+      relocate(tux)
+      tux.html(word(pick(questions)));
+    });
+
+    setInterval(() => {
+      let allChars = $(".char");
+      let char = $(pick(allChars));
+      char.css("opacity", "0%");
+      char.css("font-size", `${randInt(20,40)}px`);
+      setTimeout(() => char.css("opacity", "100%"), fTime/2);
+    }, fTime);
+
+  </script>
+</html>
