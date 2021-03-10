@@ -53,6 +53,7 @@ const beetleLinks = [
   'http://www.878help.com/steveschicken.htm', // Steve's Really Good Chicken
   'https://heckscaper.com/main.html', // Emma's Homepage
   'http://www.notepad.org' // Notepad.org
+  'https://www.youtube.com/watch?v=QrGrOK8oZG8' // Too Many Cooks
 ];
 
 // chance for an add to pop up every .25s
