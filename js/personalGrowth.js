@@ -194,13 +194,15 @@ setInterval(()=> {
   }
 }, ghostInterval);
 
-// TODO: have a variety of error messages to choose from
 let errorShowing = false;
 setInterval(() => {
   if (!errorShowing && chance(errorChance) && scrollProgress > errorThreshold) {
     errorShowing = true;
+    let errorAudio = new Audio(`./audio/${pick(errorSounds)}.mp3`);
+    errorAudio.play();
     let err = $('#error');
     relocate(err);
+    err.attr('src', `./images/beetle/err${randInt(0,numErrors)}.png`)
     err.fadeIn();
     setTimeout(() => {
       err.fadeOut();
