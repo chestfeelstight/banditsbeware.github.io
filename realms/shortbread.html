@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>~(>_<。)＼</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+		<script src="../js/wetlands.js"></script>
+    <style>
+      html {
+        overflow: hidden;
+      }
+      body {
+        margin: 0; padding: 0;
+        background-image: url('../gifs/bg7.gif');
+        background-size: 15px;
+        background-color: rgb(40, 70, 83);
+      }
+      #tx {
+        margin-left: 30px;
+        margin-top: 25vh;
+        user-select: none; /*  whoa make it not selectable */
+        font-family: monospace;
+        font-size: 16px;
+        color: rgb(94, 164, 197);
+      }
+      #mom {
+        user-select: none; /*  whoa make it not selectable */
+        position: absolute;
+        top: 30vh;
+        right: -50px;
+        width: 350px;
+      }
+    </style>
+  </head>
+  <body>
+  <iframe hidden autoplay allow='autoplay' width=0 height=0 src='https://www.youtube.com/embed/zKEmUILSZ_8?autoplay=1&loop=1&playlist=zKEmUILSZ_8'></iframe>
+   <p id="tx"></p> 
+   <img id="mom" src="../images/skull-closed.png">
+  </body>
+  <script> // direct copy of the printer code from forests.html
+    let dia = [
+        'you again! thank goodness.',
+        'I\'m in need of a favor.',
+        'you see, my daughter\'s hamster has escaped again.',
+        'she\'s so distracted!',
+        'You must find that damned creature as soon as possible!',
+        '...', 'I should have told her about the risks.',
+        'you know how kids are.',
+        'Anyway, if that poor hamster winds up near the train tracks...',
+        '...', 'Do I need to say it?',
+        'it would break her heart.',
+        'she really hasn\'t been the same since her last pet was consumed by the Elder Polymerase.',
+        '...', 'I think she really has a connection with these animals...'
+    ];
+
+    let run = false, log = 0, tx = $('#tx'), printer;
+
+    let talk = new Audio('../audio/talking.mp3');
+
+    $(window).on('click', () => {
+
+        if (log >= dia.length) window.open('../index.html#polymerase', '_self');
+
+        if (!run) {
+            run = true;
+            talk.play();
+            tx.text('');
+            let txt = dia[log++], i = 0;
+            printer = setInterval(() => {
+                tx.append(txt[i++]);
+                if (chance(0.8)) $("#mom").attr('src', `../images/skull-${pick(["open", "closed"])}.png`);
+                if (i === txt.length) {
+                    clearInterval(printer);
+                    talk.pause();
+                    if (chance(0.5)) talk.currentTime = 0;
+                    run = false;
+                }
+            }, 30);
+
+        } else {
+            run = false;
+            clearInterval(printer);
+            tx.text(dia[log-1]);
+        }
+    });
+
+    document.getElementById("tx").click();
+  </script>
+</html>
