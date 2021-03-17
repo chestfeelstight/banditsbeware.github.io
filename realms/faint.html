@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ｄｅｐａｒｔｕｒｅ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+		<script src="../js/wetlands.js"></script>
+    <style>
+      html {
+        background-color: black;
+        overflow: hidden;
+      }
+      #video {
+        width: 100vw; height: 100vh;
+        border: 0;
+        pointer-events: none;
+      }
+      #text {
+        position: absolute;
+        top: 45vh;
+        width: 100%;
+        font-family: monospace;
+        font-weight: bold;
+        text-align: center;
+        color: white;
+        mix-blend-mode: difference;
+        font-size: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <iframe id="video" autoplay allow="autoplay" src="https://www.youtube.com/embed/eCnflKKgUFU?autoplay=1&controls=0&modestbranding=1&playlist=eCnflKKgUFU"></iframe>
+    <p id="text"></p>
+  </body>
+  <script>
+    let msg = "The meaning of freedom can never be grasped by the divided mind. If I feel separate from my experience, and from the world, freedom will seem to be the extent to which I can push the world around, and fate the extent to which the world pushes me around. But to the whole mind there is no contrast of “I” and the world. There is just one process acting, and it does everything that happens. It raises my little finger and it creates earthquakes. Or, if you want to put it that way, I raise my little finger and also make earthquakes. No one fates and no one is being fated. What we ordinarily mean by choice is not freedom. Choices are usually decisions motivated by pleasure and pain, and the divided mind acts with the sole purpose of getting “I” into pleasure and out of pain. But the best pleasures are those for which we do not plan, and the worst part of pain is expecting it and trying to get away from it when it has come. You cannot plan to be happy. You can plan to exist, but in themselves existence and non-existence are neither pleasurable nor painful. The sense of not being free comes from trying to do things which are impossible and even meaningless. You are not “free” to draw a square circle, to live without a head, or to stop certain reflex actions. These are not obstacles to freedom; they are the conditions of freedom. I am not free to draw a circle if perchance it should turn out to be a square circle. I am not, thank heaven, free to walk out of doors and leave my head at home. Likewise I am not free to live in any moment but this one, or to separate myself from my feelings.";
+
+    let text = $("#text");
+    let words = msg.split(' ');
+    let i = 0;
+    let defaultTime = 180;
+    
+    let setWord = (i, time) => {
+      setTimeout(() => {
+        if (i >= words.length) i = 0;
+        text.text(words[i]);
+        if (words[i].includes('.') || words[i].includes(',')) time = defaultTime * 3;
+        else time = defaultTime;
+        setWord(++i, time);
+      }, time);
+    }
+
+    setTimeout(setWord(0, defaultTime), 5000);
+
+  </script>
+</html>

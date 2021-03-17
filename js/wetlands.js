@@ -82,7 +82,7 @@ const errorThreshold = 40;
 // error config
 const errorTimeout = 3000;
 const errorChance = 0.01;
-const numErrors = 3;
+const numErrors = 4;
 const errorSounds = ['windows_notify', 'windows_unlock', 'windows_background'];
 
 // ghost config
