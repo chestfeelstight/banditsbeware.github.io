@@ -32,8 +32,8 @@ const flickerMaxN = 200;
 const flickerInterval = 2000;
 const flickerBudgeInterval = 3000;
 
-// list of anime girls filenames
-const animeGirls = ["rei.gif","rei.jpg","rei1.jpeg","rei.webp","rei.jpeg","asuka.gif","asuka1.png","asuka.png","asuka.jpg","chika.gif","chika.png","chika1.gif","chika1.png","faye.webp","faye.jpg","kaguya.gif","kaguya.jpg","misato.png","misato.jpg","misato1.jpg","mizuhara.gif","mizuhara.jpg","mizuhara.png","mizuhara1.png","monika.png","monika.webp","natsuki.gif","omedetou.gif","sailor.gif","usagi.png","usagi1.png","yuri.png"];
+// number of ag.png's 
+const numAnimeGirls = 22;
 
 // chance for all images to be anime girls
 const animeGirlsChance = 0.02;
@@ -251,4 +251,9 @@ const zalgify = () => {
       $(yuri[j]).text(engulf(txt, i));
     }
   }
+}
+
+const edit = (element) => { 
+  let rext = removeZalgo($(element).text());
+  $(element).text(engulf(rext, randInt(0,100))); 
 }

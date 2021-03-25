@@ -39,16 +39,15 @@ setInterval(() => {
   }
 }, adiosFrequency);
 
-// a chance for all images to be anime girls
+// a chance for all images to be anime 
 if (chance(animeGirlsChance))
  $("img").each(function() {
-  $(this).attr("src", "./images/animegirls/" + pick(animeGirls));
+  $(this).attr("src", `./images/animegirls/ag${randInt(0, numAnimeGirls)}.png`);
   $(this).attr("width", "300");
 });
 
 // a chance to change all the li::markers
-if (chance(westernChance))
- $("#main-list").css("listStyleType",pick(listStyleTypes));
+if (chance(westernChance)) $("#main-list").css("listStyleType",pick(listStyleTypes));
 
 // turns icon into a random icon
 $("#icon").attr("href", `./images/icons/icon${randInt(0,numIcons)}.png`);
@@ -94,10 +93,7 @@ $(window).keydown((event) => {
         opacity: 0, 
       }, 150, ()=>tocbox.toggle());
     } else {
-      tocbox.css({
-        marginLeft: `${randInt(0, viewWidth - 300)}px`,
-        marginTop : `${randInt(0, viewHeight - 300)}px`
-      });
+      relocate(tocbox);
       tocbox.toggle();
       tocbox.animate({
         width: '300px',
@@ -166,9 +162,7 @@ dp.click(() => {
     $("img.dancing").fadeIn();
     a.play();
     let party = setInterval(()=>{
-      for (let i=0; i<200; i++) {
-        $(bigList[i]).css("color", `${randColor()}`);
-      }
+      for (let i=0; i<200; i++) $(bigList[i]).css("color", `${randColor()}`);
       if (a.ended) {
         $("img.dancing").fadeOut();
         clearInterval(party);
@@ -211,10 +205,16 @@ setInterval(() => {
   }
 }, 1000);
 
+// apply zalgo to elements with class zalgo-N
 zalgify();
 
+// apply random margin to elements with class rand-margin
 let elements = $('.rand-margin');
 for (let i=0; i<elements.length; i++) {
   let newMargin = randInt(-50, 200);
   $(elements[i]).css('margin-left', `${newMargin}px`);
 }
+
+// apply continuous zalgo effect to elements with class husk
+// this could get out of hand
+for (let i of $('.husk')) setInterval(() => { edit(i); }, 50);
