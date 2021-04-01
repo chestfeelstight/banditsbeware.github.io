@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>... ago</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+		<script src="../js/wetlands.js"></script>
+    <style>
+      html, body { 
+        padding: 0; margin: 0; 
+        background-image: url('../gifs/stars.gif');
+        background-size: 300px;
+        overflow: hidden; 
+        box-sizing: border-box; 
+        height: 100%; 
+      }
+      @keyframes rotate { 100% { -webkit-transform: rotate(360deg); } }
+      .him {
+        position: absolute;
+        width: 0; height: 0;
+        border-radius: 50%;
+        border-style: solid;
+        animation: rotate linear infinite;
+      }
+      </style>
+  </head>
+  <body>
+  <iframe hidden autoplay allow='autoplay' width=0 height=0 src='https://www.youtube.com/embed/tJvBua6OGas?autoplay=1&loop=1&playlist=tJvBua6OGas'></iframe>
+  </body>
+  <script>
+
+    const maybeColor = () => { return chance(0.4) ? 'rgba(0,0,0,0)' : randColor(); }
+
+    const cir = (Ri, Ro, t, z) => { return $('<div class="him"></div>').css({
+        'padding'             : `${Ri}px`,
+        'top'                 : `${viewHeight/2 - Ro - Ri}px`,
+        'left'                : `${viewWidth /2 - Ro - Ri}px`,
+        'z-index'             : z,
+        'border-width'        : Ro,
+        'border-color'        : `${maybeColor()} ${maybeColor()} ${maybeColor()} ${maybeColor()} `,
+        'animation-duration'  : `${t}s`,
+        'animation-direction' : chance(0.5) ? 'normal' : 'reverse'
+    });}
+
+    let Ri, Ro, N = 10;
+
+    for (let i=0; i<N; i++) {
+      Ri = i * randInt(0, 50);
+      Ro = i * randInt(10, 50);
+      t  = randInt(1, 5*i);
+      $("body").append(cir(Ri, Ro, t, randInt(0, N)))
+    }
+  </script>
+</html>
