@@ -46,6 +46,14 @@ const adiosFrequency = 15 * 1000;
 
 // list of sites that beetles could possibly link to
 const beetleLinks = [
+  './realms/beluga.html',
+  './realms/degrasse.html',
+  './realms/explore.html',
+  './realms/ree.html',
+  './realms/scald.html',
+  './realms/shortbread.html',
+  './realms/thaduis.html',
+  './realms/speedwaycoffin.html',
   'https://fauux.neocities.org', // Wired Sound for Wired People
   'https://angusnicneven.com', // Terminal 00
   'https://heavensgate.com/misc/vt092996.htm', // Last Chance to Evacuate Earth
@@ -82,7 +90,7 @@ const errorThreshold = 40;
 // error config
 const errorTimeout = 3000;
 const errorChance = 0.01;
-const numErrors = 4;
+const numErrors = 9;
 const errorSounds = ['windows_notify', 'windows_unlock', 'windows_background'];
 
 // ghost config
