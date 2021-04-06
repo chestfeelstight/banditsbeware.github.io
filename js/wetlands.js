@@ -33,7 +33,7 @@ const flickerInterval = 2000;
 const flickerBudgeInterval = 3000;
 
 // number of ag.png's 
-const numAnimeGirls = 22;
+const numAnimeGirls = 23;
 
 // chance for all images to be anime girls
 const animeGirlsChance = 0.02;
@@ -168,7 +168,7 @@ $(window).resize(() => {
 
 // a variable to store the scroll progress! incredible!
 let scrollProgress;
-$(window).on('scroll', () => {
+$(window).scroll(() => {
 	scrollProgress = 100 * document.scrollingElement.scrollTop / document.body.scrollHeight;
 });
 

@@ -218,3 +218,31 @@ for (let i=0; i<elements.length; i++) {
 // apply continuous zalgo effect to elements with class husk
 // this could get out of hand
 for (let i of $('.husk')) setInterval(() => { edit(i); }, 50);
+
+let validZone = (p, z) => {
+  for (let i = 0; i < z.length; i += 2)
+    if (z[i] <= p && p < z[i+1]) return true;
+  return false;
+}
+
+let zones = [];
+for (let i = 0; i < 10; i++) zones.push(randInt(50, 100));
+zones.sort((a, b) => a - b);
+
+trevor = $('<img src="./images/animegirls/ag22.png">');
+trevor.css({ 'display': 'none', 'position': 'fixed' });
+$('body').append(trevor);
+
+$(window).scroll(() => {
+    if (validZone(scrollProgress, zones)) {
+      trevor.show();
+      trevor.css('opacity', `${Math.random()}`);
+      trevor.css('width', `${randInt(180, 220)}px`)
+      if (chance(0.2)) relocate(trevor);
+      flicker(trevor);
+      budge(trevor);
+      setTimeout(() => {trevor.hide();}, 1000 * randInt(2,5));
+    } else {
+      trevor.hide();
+    }
+});
