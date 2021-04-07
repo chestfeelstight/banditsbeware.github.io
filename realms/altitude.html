@@ -63,7 +63,6 @@
             let txt = dia[log++], i = 0;
             printer = setInterval(() => {
                 tx.append(txt[i++]);
-                if (chance(0.8)) $("#mom").attr('src', `../images/skull-${pick(["open", "closed"])}.png`);
                 if (i === txt.length) {
                     clearInterval(printer);
                     talk.pause();

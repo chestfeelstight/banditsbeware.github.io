@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>-=[&emsp;HUNT !&emsp;]=-</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+		<script src="../js/wetlands.js"></script>
+    <style>
+      html { overflow: hidden; cursor: none; }
+      body { margin: 0; user-select: none; background-color: black;}
+      .cell { background-color: white; }
+      .cell:hover { background-color: rgb(0, 255, 106); border: 5px solid rgb(0, 119, 255); }
+      #grid { width: 100vw; height: 100vh; display: grid; }
+    </style>
+  </head>
+  <body><div id="grid"></div></body>
+  <script>
+    let dim = 30;
+    $("#grid").css({
+      'grid-template-columns': `repeat(${dim}, 1fr)`,
+      'grid-template-rows'   : `repeat(${dim}, 1fr)`
+    });
+    // cell coordinate: ( Math.floor(i / dim), i % dim )
+    for (let i=0; i < dim*dim; i++) $('#grid').append(`<div class='cell'></div>`);
+
+    let cells = $('.cell');
+    setInterval(() => {
+      for (let i=0; i < cells.length; i++)
+        if (chance(0.1)) $(cells[i]).animate({ 'opacity': `${Math.random()}` }, 300, 'linear'); 
+    }, 200);
+  </script>
+</html>
