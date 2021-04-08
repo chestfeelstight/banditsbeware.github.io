@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ｃｈｅｃｋｐｏｉｎｔ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+		<script src="../js/wetlands.js"></script>
+    <style>
+      html, body {
+        margin: 0;
+        overflow: hidden;
+        pointer-events: none;
+        cursor: none;
+        background-color: black;
+        font-family: 'VT323';
+      }
+      #video { border: none; width: 100vw; height: 100vh; }
+      #passphrase {
+        position: absolute;
+        text-align: center;
+        width: 100vw; top: 50vh;
+        transform: translateY(-50%);
+        z-index: 10;
+      }
+      #passphrase span {
+        letter-spacing: 10px;
+        color: rgba(255, 255, 255, 0.25);
+        font-size: 60px;
+      }
+      #passphrase span.typed {
+        color: rgba(255, 255, 255, 1);
+        transition: 0.1s;
+      }
+    </style>
+  </head>
+  <body>
+    <iframe id="video" autoplay allow="autoplay" src="https://www.youtube.com/embed/zPAKKROcclE?autoplay=1&controls=0&modestbranding=1&playlist=zPAKKROcclE"></iframe>
+    <p hidden id='passphrase'></p>
+  </body>
+  <script>
+    const word = 'REFRACTION';
+
+    const spans = (txt) => {
+      let res = '';
+      for (let c of txt) res += `<span>${c}</span>`;
+      return res;
+    }
+
+    $('#passphrase').html(spans(word));
+    setTimeout(() => { $('#passphrase').fadeIn(); }, 1000); 
+
+    setInterval(() => {
+      if (chance(0.1)) {
+        $('#passphrase').css('margin-left', `${randInt(-7,7)}px`);
+        setTimeout(() => {$('#passphrase').css('margin-left', `0px`);}, 25);
+      }
+    }, 50);
+
+    let i = 0;
+    $(document).keydown((event) => {
+      if (event.key == word[i].toLowerCase()) {
+        $('#passphrase span')[i].classList += 'typed';
+        if (++i === word.length) {
+          $('#passphrase').fadeOut();
+          setTimeout(() => {window.open('./hunt.html', '_self');}, 1000);
+        }
+      }
+    });
+
+  </script>
+</html>
