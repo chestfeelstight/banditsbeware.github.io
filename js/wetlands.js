@@ -54,6 +54,8 @@ const beetleLinks = [
   './realms/shortbread.html',
   './realms/thaduis.html',
   './realms/speedwaycoffin.html',
+  'blobfarm.com/planet/teeny.php',
+  'www.nuttyputtycave.com',
   'https://fauux.neocities.org', // Wired Sound for Wired People
   'https://angusnicneven.com', // Terminal 00
   'https://heavensgate.com/misc/vt092996.htm', // Last Chance to Evacuate Earth
@@ -251,17 +253,43 @@ const removeZalgo = (text) => {
   return newText;
 }
 
-const zalgify = () => {
-  for (let i=1; i<=100; i+=1) {
-    let yuri = $(`.zalgo-${i}`);
-    for (let j=0; j<yuri.length; j++) {
-      txt = $(yuri[j]).text();
-      $(yuri[j]).text(engulf(txt, i));
-    }
-  }
-}
-
 const edit = (element) => { 
   let rext = removeZalgo($(element).text());
   $(element).text(engulf(rext, randInt(0,100))); 
+}
+
+const objToStr = (obj) => {
+  let res = '';
+  for (let [k, v] of Object.entries(obj)) res += `${k}:${v};`;
+  return res;
+}
+
+const randCSS = () => { return {
+    'width': 'fit-content',
+    'color':            chance(0.5) ? '':`${randColor()}`,
+    'background-color': pick(['',`${randColor()}`]),
+    'font-family':      pick(['Times', 'fantasy', 'monospace', 'Arial', 'cursive', 'math', 'Spicy Rice', 'Diplomata', 'Dokdo', 'Comfortaa', 'Sedgwick', 'Sahitya', 'Audiowide', 'Righteous', 'Playfair Display', 'Text Me One', 'Bungee Shade', 'Lobster', 'Nunito']),
+    'font-size':        pick(['', `${randInt(10,30)}px`]),
+    'font-style':       pick(['','italic']),
+    'font-weight':      pick(['','bold']),
+    'letter-spacing':   pick(['', `${randInt(-2, 10)}px`]),
+    'text-decoration-line':   `${pick(['', pick(['underline', 'overline', 'line-through','blink'])])} ${pick(['', pick(['underline', 'overline', 'line-through','blink'])])}`,
+    'text-decoration-style':  `${pick(['solid','double','dotted','dashed','wavy'])}`,
+    'text-decoration-color':  `${pick(['', `${randColor()}`])}`
+  }
+}
+
+const truly = (e, level) => {
+  let text = $(e).text();
+  let open = true, res = '';
+  for (let c of text) {
+    if (chance(level)) {
+      res += open ? `<span style="${objToStr(randCSS())}">` : '</span>';
+      open = !open;
+    }
+    res += c;
+  }
+  if (!open) res += '</span>';
+  $(e).empty();
+  $(e).html(res);
 }

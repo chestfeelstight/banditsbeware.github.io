@@ -55,14 +55,19 @@ $("#icon").attr("href", `./images/icons/icon${randInt(0,numIcons)}.png`);
 // turns title into random list item on hover, click to go there
 let title = $("#main-title");
 title.hover(() => {
- let rand = pick(bigList);
- title.animate({height: "+=10px"},0);
- title.html($(rand).prop('outerHTML'));
- title.click(() => rand.scrollIntoView());
+  if (chance(0.6)) {
+    $('#main-title h1').css(randCSS());
+  } else {
+    let rand = pick(bigList);
+    title.animate({height: "+=10px"},0);
+    title.html($(rand).prop('outerHTML'));
+    title.click(() => rand.scrollIntoView());
+  }
 }, () => {
- title.html("<h1>Post-Quarantine Bucket List</h1>");
- title.animate({height: "-=10px"},0);
- title.click(null);
+  title.removeAttr('style');
+  title.html("<h1>Post-Quarantine Bucket List</h1>");
+  title.animate({height: "-=10px"},0);
+  title.click(null);
 });
 
 // Kjakman is a covert agent?
@@ -206,7 +211,13 @@ setInterval(() => {
 }, 1000);
 
 // apply zalgo to elements with class zalgo-N
-zalgify();
+for (let i=1; i<=100; i+=1) {
+  let yuri = $(`.zalgo-${i}`);
+  for (let j=0; j<yuri.length; j++) {
+    txt = $(yuri[j]).text();
+    $(yuri[j]).text(engulf(txt, i));
+  }
+}
 
 // apply random margin to elements with class rand-margin
 let elements = $('.rand-margin');
@@ -220,8 +231,8 @@ for (let i=0; i<elements.length; i++) {
 for (let i of $('.husk')) setInterval(() => { edit(i); }, 50);
 
 let validZone = (p, z) => {
-  for (let i = 0; i < z.length; i += 2)
-    if (z[i] <= p && p < z[i+1]) return true;
+  for (let i = 0; i < z.length; i++)
+    if (z[i] <= p && p < z[i] + 2) return true;
   return false;
 }
 
@@ -246,3 +257,7 @@ $(window).scroll(() => {
       trevor.hide();
     }
 });
+
+// apply random css to elements with class randCSS and randCSS-deep
+for (let e of $('.randCSS')) $(e).css(randCSS()); // uniform CSS
+for (let e of $('.randCSS-deep')) truly(e, 0.3);  // randomly distributed stuff
