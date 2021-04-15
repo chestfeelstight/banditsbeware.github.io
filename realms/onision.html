@@ -28,16 +28,8 @@
 	</style>
 	<body>
 		<iframe hidden autoplay allow="autoplay" width="0" height="0" src="https://www.youtube.com/embed/IhBwQHPB58k?autoplay=1&loop=1&playlist=IhBwQHPB58k" frameborder="0"></iframe>
-		<iframe id="libgen" src="http://libgen.rs/search.php?req=Introduction+to+Algorithms&open=0&res=100&view=detailed&phrase=1&column=def" frameborder=0></iframe>
 
 	</body>
 	<script>
-		let frame = $("iframe#libgen");
-		let interval = randInt(1, 10);
-		setInterval(() => {
-			let theta = (Math.random() * 4) - 2;
-			frame.css("transform", `rotate(${theta}deg)`);
-			interval = randInt(1, 10);
-		}, 4000);
 	</script>
 </html>

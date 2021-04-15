@@ -260,4 +260,5 @@ $(window).scroll(() => {
 
 // apply random css to elements with class randCSS and randCSS-deep
 for (let e of $('.randCSS')) $(e).css(randCSS()); // uniform CSS
-for (let e of $('.randCSS-deep')) truly(e, 0.3);  // randomly distributed stuff
+for (let i=0; i<100; i++) 
+  for (let e of ($(`.randCSS-${i}`))) truly(e, i/100);

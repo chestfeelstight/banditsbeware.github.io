@@ -62,7 +62,8 @@ const beetleLinks = [
   'https://www.lingscars.com/', // Ling's cars
   'http://www.878help.com/steveschicken.htm', // Steve's Really Good Chicken
   'https://heckscaper.com/main.html', // Emma's Homepage
-  'http://www.notepad.org' // Notepad.org
+  'http://www.notepad.org', // Notepad.org
+  'http://web.archive.org/web/20080703170208/http://www.sewingandembroiderywarehouse.com/embtrb.htm', // sewing 
 ];
 
 // chance for an add to pop up every .25s
@@ -163,7 +164,7 @@ const pick = (list) => list[randInt(0, list.length)];
 const chance = (t) => Math.random() < t;
 
 // random color string, e.g. `rgb(R, G, B)`
-const randColor = () => `rgb(${randInt(0,255)}, ${randInt(0,255)}, ${randInt(0,255)})`
+const randColor = () => `rgb(${randInt(0,255)},${randInt(0,255)},${randInt(0,255)})`
 
 // random month string
 const randMonth = () => pick(['January','February','March','April','May','June','July','August','September','October','November','December']);
@@ -260,7 +261,7 @@ const edit = (element) => {
 
 const objToStr = (obj) => {
   let res = '';
-  for (let [k, v] of Object.entries(obj)) res += `${k}:${v};`;
+  for (let [k, v] of Object.entries(obj)) if (v.length > 0) res += `${k}:${v};`;
   return res;
 }
 
@@ -273,7 +274,7 @@ const randCSS = () => { return {
     'font-style':       pick(['','italic']),
     'font-weight':      pick(['','bold']),
     'letter-spacing':   pick(['', `${randInt(-2, 10)}px`]),
-    'text-decoration-line':   `${pick(['', pick(['underline', 'overline', 'line-through','blink'])])} ${pick(['', pick(['underline', 'overline', 'line-through','blink'])])}`,
+    'text-decoration-line':   `${pick(['', pick(['underline', 'overline', 'line-through','blink'])])}${pick(['', pick([' underline', ' overline', ' line-through',' blink'])])}`,
     'text-decoration-style':  `${pick(['solid','double','dotted','dashed','wavy'])}`,
     'text-decoration-color':  `${pick(['', `${randColor()}`])}`
   }
