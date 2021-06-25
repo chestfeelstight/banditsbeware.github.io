@@ -54,6 +54,7 @@ const beetleLinks = [
   './realms/shortbread.html',
   './realms/thaduis.html',
   './realms/speedwaycoffin.html',
+  'https://datatracker.ietf.org/doc/html/rfc2324', // coffee protocol
   'blobfarm.com/planet/teeny.php',
   'www.nuttyputtycave.com',
   'https://fauux.neocities.org', // Wired Sound for Wired People
